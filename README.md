@@ -18,7 +18,7 @@ omg turns GitHub Copilot CLI into a multi-agent development platform. Instead of
 
 One command:
 ```bash
-copilot plugin install git@github.com:TheTrustedAdvisor/omg.git
+copilot plugin install TheTrustedAdvisor/omg
 ```
 
 That's it. 19 agents + 37 skills, ready to use.
@@ -27,13 +27,13 @@ That's it. 19 agents + 37 skills, ready to use.
 <summary>Alternative install methods</summary>
 
 ```bash
-# From local clone (development)
-git clone git@github.com:TheTrustedAdvisor/omg.git
-cd omg
-./install.sh              # Builds, tests, validates, installs plugin
+# SSH (if HTTPS doesn't work)
+copilot plugin install git@github.com:TheTrustedAdvisor/omg.git
 
-# Direct from local directory
-copilot plugin install ./plugin
+# From local clone (development)
+git clone https://github.com/TheTrustedAdvisor/omg-dev.git
+cd omg-dev
+./install.sh
 
 # Temporary (no install, session only)
 copilot --plugin-dir ./plugin
