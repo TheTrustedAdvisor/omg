@@ -1,6 +1,6 @@
 ---
 name: deep-dive
-description: "Investigate a problem then define what to do about it — trace root cause, then crystallize findings into an actionable spec. Use when you need to understand before building."
+description: "Two-stage pipeline: first TRACE the root cause, then CRYSTALLIZE findings into an actionable spec via structured interview. Use when investigation must lead to a plan."
 model: claude-sonnet-4.6
 tools:
   - view

@@ -1,6 +1,6 @@
 ---
 name: planner
-description: "Create implementation plans with testable acceptance criteria. Interview to clarify requirements, then produce actionable step-by-step plans. Use before building anything complex."
+description: "Create implementation plans with testable acceptance criteria FROM a spec or requirements. Use AFTER analyst has identified gaps. Produces actionable steps."
 model: claude-opus-4.6
 tools:
   - view

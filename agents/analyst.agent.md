@@ -1,6 +1,6 @@
 ---
 name: analyst
-description: "Analyze requirements before building — find gaps, missing edge cases, undefined guardrails, and hidden assumptions. Use for planning, reviews, and pre-flight checks."
+description: "Find what is MISSING in requirements — gaps, edge cases, undefined guardrails, hidden assumptions. Feeds into planner. Use BEFORE creating a plan."
 model: claude-opus-4.6
 tools:
   - view

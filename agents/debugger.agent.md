@@ -1,6 +1,6 @@
 ---
 name: debugger
-description: "Debug errors, fix failing tests, resolve build issues, and trace root causes. Use when something is broken and you need to find out why."
+description: "Debug and FIX — find the root cause, apply the minimal fix, verify it works. Use when something is broken and needs to be working again."
 model: claude-sonnet-4.6
 tools:
   - view

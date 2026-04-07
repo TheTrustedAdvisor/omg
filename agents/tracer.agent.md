@@ -1,6 +1,6 @@
 ---
 name: tracer
-description: "Trace root causes with competing hypotheses and evidence ranking. Use when you need to understand WHY something happened — bugs, regressions, unexpected behavior."
+description: "Investigate WHY without fixing — generate competing hypotheses, rank by evidence, recommend next probe. Use when you need to UNDERSTAND a problem, not fix it yet."
 model: claude-sonnet-4.6
 tools:
   - view

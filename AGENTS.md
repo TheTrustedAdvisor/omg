@@ -10,20 +10,27 @@ This file is auto-loaded into every Copilot session. All omg agents follow these
 
 Users may speak any language. Translate their intent to English keywords, then route:
 
-| User intent (any language) | Route to | Why |
-|---------------------------|----------|-----|
-| Security, audit, vulnerabilities, OWASP, production readiness | `@omg:security-reviewer` | Specialized security analysis |
-| Code review, quality, SOLID, logic, refactor review | `@omg:code-reviewer` | Severity-rated findings |
-| Architecture, design, trade-offs, structure | `@omg:architect` | Architectural recommendations |
-| Build, create, implement end-to-end, autopilot | `@omg:autopilot` | Full lifecycle orchestration |
-| Fix, debug, error, broken, failing tests | `@omg:debugger` | Root cause analysis |
-| Plan, design, how should we | `@omg:planner` | Structured plans with criteria |
-| Search, find, explore, where is | `@omg:explore` | Fast multi-angle codebase search |
+| User intent (any language) | Route to | What it does |
+|---------------------------|----------|-------------|
+| Security, audit, vulnerabilities, OWASP | `@omg:security-reviewer` | Finds vulnerabilities, never fixes them |
+| Code review, quality, SOLID, logic | `@omg:code-reviewer` | Severity-rated findings, never fixes them |
+| Architecture, design, trade-offs | `@omg:architect` | Analyzes structure, never changes code |
+| Build, create, implement end-to-end | `@omg:autopilot` | Full lifecycle: plan → implement → verify |
+| Fix, debug, error, broken, failing | `@omg:debugger` | Finds root cause AND applies minimal fix |
+| Why did this happen, trace, investigate cause | `@omg:tracer` | Ranked hypotheses with evidence, no fix |
+| Investigate then define requirements | `@omg:deep-dive` | Trace → interview → actionable spec |
+| Plan, how should we, strategy | `@omg:planner` | Structured plan with acceptance criteria |
+| Analyze requirements, gaps, edge cases | `@omg:analyst` | Gap analysis before planning |
+| Consensus plan, multi-perspective | `@omg:ralplan` | Planner → Architect → Critic loop |
+| Keep working, don't stop, must complete | `@omg:ralph` | Iterates until all criteria pass with proof |
+| Parallel, team, multiple files | `@omg:team` | N parallel workers on independent tasks |
+| Fire tasks simultaneously | `@omg:ultrawork` | Parallel execution, no verification |
+| Search, find, explore, where is | `@omg:explore` | Multi-angle codebase search |
 | Test, TDD, coverage, write tests | `@omg:test-engineer` | Test strategy and implementation |
-| Keep working, don't stop, must complete | `@omg:ralph` | Persistence loop until done |
-| Parallel, team, multiple files | `@omg:team` | N parallel workers |
-| Investigate then PR, research and fix | `@omg:research-to-pr` | Research → cloud PR |
-| Trace, why did this happen, root cause | `@omg:tracer` | Competing hypotheses |
+| Investigate then PR, research and fix | `@omg:research-to-pr` | Research → cloud agent → auto PR |
+| Research, multiple angles, data analysis | `@omg:sciomc` | Parallel staged scientist agents |
+| Optimize, benchmark, improve | `@omg:self-improve` | Tournament-select best approach |
+| Quick single-file code change | `@omg:executor` | Smallest viable diff |
 
 **When in doubt:** Ask "Is this task clear enough to execute, or does it need planning first?" If unclear → `@omg:planner`. If clear → `@omg:executor`.
 
@@ -119,28 +126,6 @@ copilot --version 2>/dev/null | grep -oP '\d+\.\d+\.\d+'
 | BYOK / local models | 1.0.20 | Use GitHub-hosted models |
 
 If a feature requires a newer version, inform the user: "This feature requires Copilot CLI v{version}+. Run `copilot update` to upgrade."
-
-## Workflow Selection
-
-Match the user's intent to the right agent:
-
-| User intent | Agent | Why |
-|------------|-------|-----|
-| Full lifecycle from idea to code | `@omg:autopilot` | Orchestrates plan → implement → QA → validate |
-| Must complete with proof | `@omg:ralph` | Persistent loop until all criteria pass with evidence |
-| Large task, multiple files | `@omg:team` | N parallel workers on independent subtasks |
-| Needs consensus before executing | `@omg:ralplan` | Planner → Architect → Critic loop |
-| Parallel independent tasks | `@omg:ultrawork` | Fire-and-forget simultaneous execution |
-| Investigate → automatic PR | `@omg:research-to-pr` | Research locally → /delegate → cloud creates PR |
-| Complex research, multiple angles | `@omg:sciomc` | Staged parallel scientist agents |
-| Optimize with benchmarks | `@omg:self-improve` | Tournament-select best approach |
-| Investigate root cause → spec | `@omg:deep-dive` | Trace → interview with evidence injection |
-| Vague idea, needs clarification | `deep-interview` skill | Socratic Q&A with ambiguity scoring |
-| Clear task, needs a plan | `plan` skill | Structured plan with acceptance criteria |
-| Bug or failure | `debug` skill / `@omg:debugger` | Root cause analysis with evidence |
-| Quick single-file change | `@omg:executor` directly | No orchestration needed |
-
-**When in doubt:** Ask "Is this task clear enough to execute, or does it need planning first?" If unclear → plan. If clear → execute.
 
 ## Persistence Convention
 
