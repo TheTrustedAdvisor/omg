@@ -1,59 +1,35 @@
 ---
 name: ralplan
-description: "Consensus planning — iterative Planner/Architect/Critic loop until agreement"
+description: "Activates consensus planning — iterative multi-perspective review until agreement"
 tags:
   - planning
   - consensus
 ---
 
-## Instructions
+## Activation
 
-Execute these steps IN ORDER. Do NOT skip steps. Do NOT substitute different agents.
+This skill activates the **ralplan agent** for consensus-driven planning.
 
-### 1. INIT
+The ralplan agent orchestrates a structured dialogue:
+1. Planner creates initial plan with principles, drivers, options
+2. Architect reviews for soundness — provides antithesis and trade-offs
+3. Critic evaluates quality — verifies testable criteria
+4. If rejected: iterate (max 5 rounds)
+5. On approval: produce ADR (Architecture Decision Record)
 
-```bash
-mkdir -p .omg/reviews .omg/plans .omg/research
-```
+## Trigger Keywords
 
-### 2. PLANNER
+ralplan, consensus, consensus planning
 
-```
-task(agent_type="omg:planner", model="claude-opus-4.6", mode="sync", prompt="Create a structured plan for: {user's topic}. Include: Principles (3-5), Decision Drivers (top 3), Viable Options (>=2) with pros/cons.")
-```
+## Persistence
 
-### 3. ARCHITECT
+- Review history: `.omg/reviews/ralplan-log.md`
+- Final plan: `.omg/plans/ralplan-result.md`
+- ADR: `.omg/research/adr-{name}.md`
+- Index: `store_memory` key `omg:active-plan`
 
-```
-task(agent_type="omg:architect", model="claude-opus-4.6", mode="sync", prompt="Review this plan. Provide: (1) Antithesis against the favored option, (2) Trade-off tensions, (3) Synthesis if viable. Plan: {step 2 output}")
-```
+## Quality Contract
 
-### 4. CRITIC
-
-```
-task(agent_type="omg:critic", model="claude-opus-4.6", mode="sync", prompt="Evaluate this plan + review. Start with VERDICT: ACCEPT or REVISE or REJECT. Number each finding. Plan: {step 2 output}. Architect review: {step 3 output}")
-```
-
-### 5. SAVE ROUND
-
-```
-task(agent_type="omg:executor", model="claude-haiku-4.5", mode="sync", prompt="Append to file .omg/reviews/ralplan-log.md. Create it if missing. Content to append: ## Round {N}\n### Architect\n{step 3 output}\n### Critic\n{step 4 output}\n---")
-```
-
-### 6. DECIDE
-
-- If verdict is REVISE or REJECT AND round < 5: go to step 2 with feedback
-- If verdict is ACCEPT: go to step 7
-
-### 7. FINALIZE (only on ACCEPT)
-
-```
-task(agent_type="omg:executor", model="claude-haiku-4.5", mode="sync", prompt="Write the approved plan to .omg/plans/ralplan-result.md: {final plan}")
-```
-
-Then call:
-```
-store_memory key="omg:active-plan" value='{"path":".omg/plans/ralplan-result.md"}'
-```
-
-Show the user the final plan and mention saved files.
+- Multi-perspective review (planner + architect + critic)
+- Iterate on rejection — address every finding
+- All rounds persisted for cross-session history

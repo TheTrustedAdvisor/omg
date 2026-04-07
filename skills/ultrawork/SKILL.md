@@ -1,85 +1,27 @@
 ---
 name: ultrawork
-description: "Parallel execution engine — fires multiple agents simultaneously for independent tasks"
+description: "Activates parallel execution — fires multiple agents simultaneously for independent tasks"
 tags:
   - execution-mode
   - parallel
 ---
 
-## When to Use
+## Activation
 
-- Multiple independent tasks can run simultaneously
-- User says "ultrawork" or wants parallel execution
-- Task benefits from concurrent execution
+This skill activates the **ultrawork agent** for parallel task execution.
 
-## When NOT to Use
+The ultrawork agent will:
+- Classify tasks as independent or dependent
+- Fire all independent tasks simultaneously
+- Run dependent tasks sequentially after prerequisites
+- Verify combined result (build, tests)
 
-- Task requires guaranteed completion with verification → use ralph (includes ultrawork)
-- Full autonomous pipeline → use autopilot (includes ralph which includes ultrawork)
-- Single sequential task → delegate directly to @executor
+## Trigger Keywords
 
-## Relationship to Other Modes
+ultrawork, ulw, parallel execution, fire simultaneously
 
-```
-autopilot (full lifecycle)
- └── ralph (persistence + verification)
-     └── ultrawork (parallel execution)
-```
+## Quality Contract
 
-Ultrawork is the parallelism layer. Ralph adds persistence and verification. Autopilot adds the full lifecycle pipeline.
-
-## Workflow
-
-### 1. Classify Tasks
-Identify which tasks can run in parallel vs which have dependencies.
-
-### 2. Route by Complexity and Fire
-
-Route each subtask to the right agent/model, then fire all independent ones simultaneously:
-Launch all parallel-safe tasks at once. Example with 3 independent subtasks:
-
-```
-task(agent_type="omg:executor", model="claude-sonnet-4.6", mode="background",
-  prompt="[SUBTASK 1] {description}. Work ONLY on {files}.")
-
-task(agent_type="omg:executor", model="claude-sonnet-4.6", mode="background",
-  prompt="[SUBTASK 2] {description}. Work ONLY on {files}.")
-
-task(agent_type="omg:executor", model="claude-sonnet-4.6", mode="background",
-  prompt="[SUBTASK 3] {description}. Work ONLY on {files}.")
-```
-
-Route by complexity:
-- Simple lookups → `task(agent_type="omg:explore", model="claude-haiku-4.5", mode="background")`
-- Standard implementation → `task(agent_type="omg:executor", model="claude-sonnet-4.6", mode="background")`
-- Complex analysis → `task(agent_type="omg:architect", model="claude-opus-4.6", mode="background")`
-
-### 4. Run Dependent Tasks Sequentially
-Wait for prerequisites before launching dependent work.
-
-### 5. Verify
-Lightweight verification when all tasks complete:
-- Build/typecheck passes
-- Affected tests pass
-- No new errors introduced
-
-## Rules
-
-- Fire all independent agent calls simultaneously — never serialize independent work
-- Run builds/tests in background when possible
-- For full persistence and verification, recommend switching to ralph
-
-## Checklist
-
-- [ ] All parallel tasks completed
-- [ ] Build/typecheck passes
-- [ ] Affected tests pass
-- [ ] No new errors introduced
-
-## Autonomous Execution
-
-When invoked in automation or CI, use `--no-ask-user` to prevent the agent from stopping to ask questions:
-```
-copilot -p "..." --autopilot --no-ask-user --yolo -s
-```
-This ensures fully autonomous execution without human intervention.
+- Never serialize independent work
+- Each parallel worker gets explicit file boundaries
+- Lightweight verification after all tasks complete
