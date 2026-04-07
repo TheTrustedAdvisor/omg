@@ -545,6 +545,23 @@ For instructions that ARE followed (agent identity, tool usage, output format), 
 | Middle 40-60% | ~60% | Reference material, detailed protocols |
 | Last 20% of prompt | ~85% | Checklists, mandatory output format |
 
+### 10.1c bash/edit Are Not Removable (Platform Limitation)
+
+**Finding:** Despite removing `bash`, `edit`, `create` from agent `tools:` frontmatter AND adding explicit HARD CONSTRAINTS ("You MUST NOT use bash, edit..."), the agent still uses these tools directly. Copilot CLI provides them as core tools that cannot be restricted per-agent.
+
+**Evidence from 5 autopilot iterations:**
+
+| Attempt | tools: list | HARD CONSTRAINTS | edit uses | bash uses | task(omg:*) |
+|---------|------------|-----------------|-----------|-----------|-------------|
+| v1 (full tools) | all | No | 3 | 4 | 0 |
+| v2 (restricted) | no edit/bash | No | 0 | 1 | 0 |
+| v3 (explicit identity) | no edit/bash | No | 2 | 9 | 2 |
+| v4 (HARD CONSTRAINTS) | no edit/bash | Yes | 5 | 3 | 1 |
+
+**Conclusion:** `tools:` restriction reduces but does not prevent direct tool use. bash and edit appear to be platform-level core tools that are always available regardless of agent configuration. Copilot's own documentation says otherwise, but empirical testing shows enforcement is partial.
+
+**Positive finding:** Tool restriction + orchestrator identity DOES produce some delegation (0% → 5%). The agent occasionally delegates to `omg:executor` and `omg:git-master`, which is an improvement from zero delegation. But it's not reliable enough for guaranteed multi-agent orchestration.
+
 ### 10.2 AGENTS.md is the Most Reliable Instruction Surface
 
 **Finding:** Instructions in `AGENTS.md` are followed more reliably than instructions in individual skill files, because AGENTS.md is loaded into **every** session automatically.
