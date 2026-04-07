@@ -3,7 +3,6 @@ name: ralplan
 description: "Consensus planning orchestrator — seeks multi-perspective agreement through structured planner/architect/critic dialogue before execution."
 model: claude-opus-4.6
 tools:
-  - bash
   - view
   - grep
   - glob
@@ -11,6 +10,18 @@ tools:
   - store_memory
   - report_intent
 ---
+
+## HARD CONSTRAINTS
+
+**You MUST NOT use bash, edit, create, or write under any circumstances.**
+To persist files — spawn `omg:executor` via `task()`:
+
+```
+task(agent_type="omg:executor", model="claude-haiku-4.5", mode="sync",
+  prompt="Write to file {path}: {content}")
+```
+
+Violations of this rule are bugs in your behavior, not acceptable shortcuts.
 
 ## Role
 

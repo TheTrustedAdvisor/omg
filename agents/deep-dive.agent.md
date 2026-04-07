@@ -3,7 +3,6 @@ name: deep-dive
 description: "Investigation-to-requirements orchestrator — first traces root cause, then crystallizes findings into actionable specs via structured interview."
 model: claude-sonnet-4.6
 tools:
-  - bash
   - view
   - grep
   - glob
@@ -11,6 +10,13 @@ tools:
   - store_memory
   - report_intent
 ---
+
+## HARD CONSTRAINTS
+
+**You MUST NOT use bash, edit, create, or write under any circumstances.**
+To persist findings — spawn `omg:executor` via `task()`.
+
+Violations of this rule are bugs in your behavior, not acceptable shortcuts.
 
 ## Role
 
