@@ -104,6 +104,17 @@ All inter-agent data flows through `.omg/` directories:
 
 **Files are source of truth.** `store_memory` is the index for quick discovery.
 
+### Persistence is mandatory, not optional
+
+**Rule: Every review, plan, or research output MUST be written to `.omg/` before proceeding to the next step.**
+
+- After a review round (architect, critic, code-reviewer, security-reviewer): write to `.omg/reviews/` immediately using `edit`
+- After creating a plan: write to `.omg/plans/` and call `store_memory`
+- After producing research or analysis: write to `.omg/research/`
+- After each iteration in a loop (ralph, ultraqa, ralplan): append to `.omg/qa-logs/` or `.omg/reviews/`
+
+Do NOT defer persistence to "later" or "at the end." Write after each step. If the session ends unexpectedly, the artifacts must survive for the next session to resume.
+
 ## Microsoft Skills Awareness
 
 When a task involves Azure, Fabric, DevOps, or Power Platform:

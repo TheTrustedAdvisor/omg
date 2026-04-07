@@ -12,50 +12,59 @@ tags:
 - High-stakes decisions needing multi-perspective validation
 - Complex tasks where approach agreement matters before execution
 
+## Mandatory Persistence
+
+**You MUST persist artifacts at every step. This is not optional.**
+
+| When | Action | Path |
+|------|--------|------|
+| After EVERY architect+critic round | Append round log | `.omg/reviews/ralplan-{plan-name}-log.md` |
+| On approval | Write final plan | `.omg/plans/ralplan-{name}.md` |
+| On approval | Index plan | `store_memory` key `omg:active-plan` |
+| On approval | Write ADR | `.omg/research/adr-{name}.md` |
+
 ## Workflow
 
 Ralplan is consensus mode planning. It runs an iterative loop:
 
-1. **@omg:planner** creates initial plan with:
-   - Principles (3-5)
-   - Decision Drivers (top 3)
-   - Viable Options (>=2) with pros/cons
+### Step 1: Planner creates initial plan
 
-   ```
-   task(agent_type="omg:planner", prompt="Create plan with RALPLAN-DR summary: ...", model="claude-opus-4.6", mode="sync")
-   ```
+```
+task(agent_type="omg:planner", prompt="Create plan with RALPLAN-DR summary: Principles (3-5), Decision Drivers (top 3), Viable Options (>=2) with pros/cons.", model="claude-opus-4.6", mode="sync")
+```
 
-2. **@omg:architect** reviews for architectural soundness — must provide strongest counterargument against the favored option and meaningful trade-off tensions
+### Step 2: Architect reviews
 
-   ```
-   task(agent_type="omg:architect", prompt="Review plan: {plan}. Provide antithesis + trade-offs.", model="claude-opus-4.6", mode="sync")
-   ```
+```
+task(agent_type="omg:architect", prompt="Review plan: {plan}. Provide antithesis + trade-offs.", model="claude-opus-4.6", mode="sync")
+```
 
-3. **@omg:critic** evaluates quality — must verify testable acceptance criteria, fair alternative exploration, and concrete verification steps
+### Step 3: Critic evaluates
 
-   ```
-   task(agent_type="omg:critic", prompt="Evaluate plan: {plan} + architect review: {review}", model="claude-opus-4.6", mode="sync")
-   ```
+```
+task(agent_type="omg:critic", prompt="Evaluate plan: {plan} + architect review: {review}", model="claude-opus-4.6", mode="sync")
+```
 
-4. **Re-review loop** (max 5 iterations) — if critic rejects, planner revises, back to architect
-5. **On approval** — final plan includes ADR: Decision, Drivers, Alternatives considered, Why chosen, Consequences, Follow-ups
+### Step 4: PERSIST THE ROUND (mandatory)
+
+**Immediately after Step 3**, append to `.omg/reviews/ralplan-{plan-name}-log.md`:
+
+```markdown
+## Round N
+### Architect Review
+[key findings, antithesis, trade-offs]
+### Critic Verdict: ACCEPT/REVISE/REJECT
+[critical findings, required changes]
+```
+
+Use `edit` to create/append this file. Do NOT skip this step.
+
+### Step 5: Loop or finalize
+
+- **If REVISE/REJECT:** Planner reads the full log, revises plan addressing each CRITICAL finding by number. Back to Step 2. Max 5 iterations.
+- **If ACCEPT:** Write final plan to `.omg/plans/ralplan-{name}.md`, index via `store_memory` with key `omg:active-plan`, write ADR to `.omg/research/adr-{name}.md`.
 
 After approval, hand off to team or ralph for execution.
-
-## Review History Tracking
-
-Each iteration must be logged so the planner sees full feedback history:
-
-1. **After each architect+critic round:** append to `.omg/reviews/ralplan-{plan-name}-log.md`:
-   ```
-   ## Round N
-   ### Architect Review
-   [key findings, antithesis, trade-offs]
-   ### Critic Verdict: ACCEPT/REVISE/REJECT
-   [critical findings, required changes]
-   ```
-2. **Before each revision:** planner reads the full log to avoid re-introducing previously flagged issues
-3. **On REVISE:** planner must add a "Changes from Round N" section in the revised plan addressing each CRITICAL finding by number
 
 ## Detailed Consensus Protocol
 
