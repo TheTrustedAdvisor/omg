@@ -72,17 +72,23 @@ When reading output from a background `task` agent:
 
 ## Workflow Selection
 
-Match the user's intent to the right workflow:
+Match the user's intent to the right agent:
 
-| User intent | Workflow | Why |
-|------------|---------|-----|
-| Vague idea, needs clarification | `deep-interview` | Socratic Q&A with ambiguity scoring |
-| Clear task, needs a plan | `plan` | Structured plan with acceptance criteria |
-| Plan exists, needs execution | `ralph` | Persistent loop until all criteria pass |
-| Large task, multiple files | `team N` | Parallel agents on independent subtasks |
-| Full lifecycle from idea to code | `autopilot` | Plan → implement → QA → validate |
-| Bug or failure | `debug` / `trace` | Root cause analysis with evidence |
-| Quick single-file change | Direct @omg:executor | No orchestration needed |
+| User intent | Agent | Why |
+|------------|-------|-----|
+| Full lifecycle from idea to code | `@omg:autopilot` | Orchestrates plan → implement → QA → validate |
+| Must complete with proof | `@omg:ralph` | Persistent loop until all criteria pass with evidence |
+| Large task, multiple files | `@omg:team` | N parallel workers on independent subtasks |
+| Needs consensus before executing | `@omg:ralplan` | Planner → Architect → Critic loop |
+| Parallel independent tasks | `@omg:ultrawork` | Fire-and-forget simultaneous execution |
+| Investigate → automatic PR | `@omg:research-to-pr` | Research locally → /delegate → cloud creates PR |
+| Complex research, multiple angles | `@omg:sciomc` | Staged parallel scientist agents |
+| Optimize with benchmarks | `@omg:self-improve` | Tournament-select best approach |
+| Investigate root cause → spec | `@omg:deep-dive` | Trace → interview with evidence injection |
+| Vague idea, needs clarification | `deep-interview` skill | Socratic Q&A with ambiguity scoring |
+| Clear task, needs a plan | `plan` skill | Structured plan with acceptance criteria |
+| Bug or failure | `debug` skill / `@omg:debugger` | Root cause analysis with evidence |
+| Quick single-file change | `@omg:executor` directly | No orchestration needed |
 
 **When in doubt:** Ask "Is this task clear enough to execute, or does it need planning first?" If unclear → plan. If clear → execute.
 

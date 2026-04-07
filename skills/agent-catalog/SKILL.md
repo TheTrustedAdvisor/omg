@@ -30,6 +30,20 @@ copilot -p "..." --agent omg:architect --excluded-tools edit,create --yolo
 # For maximum security in CI, use copilot CLI with --excluded-tools.
 ```
 
+### Orchestrators (9) — coordinate specialists, do NOT implement directly
+
+| Agent | task() name | Purpose | Mode |
+|-------|------------|---------|------|
+| **autopilot** | `omg:autopilot` | Full lifecycle: idea → working verified code. Delegates to specialists. | sync |
+| **ralph** | `omg:ralph` | Persistence loop — keeps iterating until all acceptance criteria pass. | sync |
+| **team** | `omg:team` | Decomposes task, fires N parallel workers, verifies combined result. | sync |
+| **ralplan** | `omg:ralplan` | Consensus planning: planner → architect → critic loop until agreement. | sync |
+| **ultrawork** | `omg:ultrawork` | Parallel fire-and-forget — launches independent tasks simultaneously. | sync |
+| **research-to-pr** | `omg:research-to-pr` | Deep investigation → /delegate → cloud agent creates PR. Copilot-exclusive. | sync |
+| **sciomc** | `omg:sciomc` | Staged parallel research with tiered scientist agents. | sync |
+| **self-improve** | `omg:self-improve` | Autonomous optimization: benchmark, tournament-select best approach. | sync |
+| **deep-dive** | `omg:deep-dive` | Two-stage: trace root cause → crystallize into actionable spec. | sync |
+
 ### Deep Reasoning (opus-class)
 
 | Agent | task() name | Purpose | Mode |
@@ -66,6 +80,21 @@ copilot -p "..." --agent omg:architect --excluded-tools edit,create --yolo
 ## Delegation Decision Tree
 
 ```
+Full lifecycle from idea to code?
+  → omg:autopilot (sonnet, sync)
+
+Must complete with proof?
+  → omg:ralph (sonnet, sync)
+
+Multiple independent subtasks?
+  → omg:team (sonnet, sync)
+
+Need consensus plan?
+  → omg:ralplan (opus, sync)
+
+Investigate → auto PR?
+  → omg:research-to-pr (sonnet, sync)
+
 Need to find files/patterns?
   → omg:explore (haiku, background)
 
