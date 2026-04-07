@@ -14,7 +14,7 @@ The pipeline compiles OMC source material into Copilot-native format.
 ```mermaid
 graph LR
     subgraph Sources
-        OMC[OMC Repo<br/>28 agents, 37 skills]
+        OMC[OMC Repo<br/>28 agents, 41 skills]
         MS[Microsoft Skills<br/>6 repos]
         AC[awesome-copilot<br/>Community index]
     end
@@ -46,7 +46,7 @@ graph LR
 
     subgraph User["User's Copilot"]
         INST[copilot plugin install ./plugin]
-        INST --> USE[28 agents + 37 skills active]
+        INST --> USE[28 agents + 41 skills active]
     end
 
     Output --> INST

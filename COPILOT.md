@@ -11,7 +11,7 @@ are why omg exists specifically for Copilot, not as a generic AI tool.
 | Capability | How omg Uses It | Status |
 |-----------|----------------|--------|
 | `copilot plugin install` | One-command installation from GitHub repo | Active |
-| `plugin.json` manifest | Declares 28 agents + 37 skills + hooks | Active |
+| `plugin.json` manifest | Declares 28 agents + 41 skills + hooks | Active |
 | `agents/` directory | 28 `.agent.md` files auto-discovered (19 specialists + 9 orchestrators) | Active |
 | `skills/` directory | 37 `SKILL.md` files auto-discovered by keyword | Active |
 | `AGENTS.md` | Global config loaded into every session | Active |
