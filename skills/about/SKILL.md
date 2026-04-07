@@ -43,6 +43,10 @@ Copilot Capabilities Used:
 
 Persistence:    .omg/plans/ · .omg/research/ · .omg/reviews/ · .omg/qa-logs/
 
+Author:         Matthias Falland — Microsoft Data Platform MVP
+                www.the-trusted-advisor.com
+                linkedin.com/in/matthias-falland
+
 Credits:        Inspired by oh-my-claudecode (OMC), adapted and extended
                 for GitHub Copilot's native capabilities.
 
