@@ -21,7 +21,7 @@ Users may speak any language. Translate their intent to English keywords, then r
 | Investigate then define requirements | `@omg:deep-dive` | Trace → interview → actionable spec |
 | Plan, how should we, strategy | `@omg:planner` | Structured plan with acceptance criteria |
 | Analyze requirements, gaps, edge cases | `@omg:analyst` | Gap analysis before planning |
-| Consensus plan, multi-perspective | `@omg:ralplan` | Planner → Architect → Critic loop |
+| Consensus plan, multi-perspective | `@omg:planner` | Consensus mode: Planner → Architect → Critic |
 | Parallel, team, multiple files | `@omg:team` | N parallel workers on independent tasks |
 | Fire tasks simultaneously | `@omg:team` | Parallel execution (ultrawork = team alias) |
 | Search, find, explore, where is | `@omg:explore` | Multi-angle codebase search |
@@ -206,7 +206,6 @@ All agents use `task()` with explicit `model` and `mode`:
 | Full autonomous execution | `task(agent_type="omg:autopilot", model="claude-sonnet-4.6", mode="sync")` | high |
 
 | Parallel team execution | `task(agent_type="omg:team", model="claude-sonnet-4.6", mode="sync")` | high |
-| Consensus planning | `task(agent_type="omg:ralplan", model="claude-opus-4.6", mode="sync")` | xhigh |
 | Parallel fire-and-forget | `task(agent_type="omg:team", model="claude-sonnet-4.6", mode="sync")` | medium |
 | Research → auto PR | `task(agent_type="omg:research-to-pr", model="claude-sonnet-4.6", mode="sync")` | high |
 | Parallel research | `task(agent_type="omg:sciomc", model="claude-sonnet-4.6", mode="sync")` | high |
