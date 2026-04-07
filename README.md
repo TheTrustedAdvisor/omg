@@ -84,18 +84,108 @@ Copilot picks the right agents and skills automatically.
 | `deepsearch...` | Multi-angle codebase exploration, not just grep |
 | `ultrathink...` | Deep reasoning on complex architectural decisions |
 
-## What Makes omg Different
+## How It Works — Real Multi-Agent Orchestration
 
-### Real Multi-Agent Orchestration
+Not just prompts — agents delegate to each other, persist handoffs to files, and verify each other's work. Here's what happens when you say `autopilot: add authentication`:
 
-Not just prompts — agents delegate to each other, persist handoffs to files, and verify each other's work:
+```mermaid
+sequenceDiagram
+    participant U as You
+    participant A as Autopilot
+    participant AN as Analyst (opus)
+    participant AR as Architect (opus)
+    participant CR as Critic (opus)
+    participant EX as Executor (sonnet)
+    participant VR as Verifier (sonnet)
+    participant SR as Security (opus)
 
+    U->>A: autopilot: add authentication
+    
+    rect rgb(40, 40, 60)
+    Note over A,AN: Phase 1 — Expand
+    A->>AN: Requirements analysis
+    AN-->>A: Gaps, edge cases, guardrails
+    end
+
+    rect rgb(40, 50, 40)
+    Note over A,CR: Phase 2 — Plan
+    A->>AR: Create implementation plan
+    AR-->>A: Plan with acceptance criteria
+    A->>CR: Evaluate plan quality
+    CR-->>A: ACCEPT (or REVISE → loop)
+    end
+    
+    Note over A: Plan saved → .omg/plans/
+
+    rect rgb(50, 40, 40)
+    Note over A,EX: Phase 3 — Execute
+    A->>EX: Implement (parallel tasks)
+    EX-->>A: Code changes + test results
+    end
+
+    rect rgb(40, 40, 50)
+    Note over A,SR: Phase 4 — QA (parallel)
+    A->>AR: Verify completeness
+    A->>SR: Security audit
+    A->>VR: Evidence-based verification
+    AR-->>A: Architecture OK
+    SR-->>A: No vulnerabilities
+    VR-->>A: PASS (all criteria met)
+    end
+
+    A->>U: Done. Evidence in .omg/reviews/
 ```
-Planner → creates plan → .omg/plans/
-  Executor → reads plan → implements code
-    Verifier → checks EVERY acceptance criterion with fresh test output
-      Architect → reviews completeness → APPROVE or REQUEST CHANGES
+
+### What Makes This Different
+
+| Traditional AI | omg Orchestration |
+|---------------|-------------------|
+| One model does everything | 6 specialists, each best at their job |
+| "It should work" | Verifier ran `npm test` and saw green |
+| Forgets context between steps | Plans, research, reviews persist in `.omg/` |
+| Single pass, hope for the best | Critic rejects → Planner revises → loop until approved |
+| Same model for search and architecture | Haiku for speed, Opus for depth |
+
+### The Orchestration Patterns
+
+omg provides several orchestration patterns, each for different needs:
+
+```mermaid
+graph TD
+    U[User Request] --> D{What kind of task?}
+    
+    D -->|Vague idea| DI[deep-interview]
+    D -->|Clear task| P[plan]
+    D -->|Code it now| R[ralph]
+    D -->|Full lifecycle| AP[autopilot]
+    D -->|Multiple files| T[team N]
+    D -->|Bug| DB[debug]
+    
+    DI -->|Spec ready| P
+    P -->|Plan approved| R
+    P -->|Complex| AP
+    
+    AP --> R
+    R --> UW[ultrawork]
+    T --> UW
+    
+    style AP fill:#4a9eff,color:#fff
+    style R fill:#ff6b6b,color:#fff
+    style T fill:#51cf66,color:#fff
+    style DI fill:#ffd43b,color:#000
+    style P fill:#cc5de8,color:#fff
+    style DB fill:#ff922b,color:#fff
+    style UW fill:#868e96,color:#fff
 ```
+
+**autopilot** wraps ralph (persistence + verification), which wraps ultrawork (parallel execution). Each layer adds capability:
+
+| Layer | What it adds | When to use |
+|-------|-------------|-------------|
+| **ultrawork** | Parallel agent dispatch | Independent tasks, speed matters |
+| **ralph** | Persistence loop + verification | Must complete with evidence |
+| **autopilot** | Full lifecycle (plan→execute→QA) | From idea to working code |
+| **team N** | N parallel workers + coordination | Large tasks, multiple files |
 
 ### Verified Completion
 
