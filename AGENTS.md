@@ -168,6 +168,10 @@ All agents use `task()` with explicit `model` and `mode`:
 | Parallel team execution | `task(agent_type="omg:team", model="claude-sonnet-4.6", mode="sync")` | high |
 | Consensus planning | `task(agent_type="omg:ralplan", model="claude-opus-4.6", mode="sync")` | xhigh |
 | Parallel fire-and-forget | `task(agent_type="omg:ultrawork", model="claude-sonnet-4.6", mode="sync")` | medium |
+| Research → auto PR | `task(agent_type="omg:research-to-pr", model="claude-sonnet-4.6", mode="sync")` | high |
+| Parallel research | `task(agent_type="omg:sciomc", model="claude-sonnet-4.6", mode="sync")` | high |
+| Autonomous optimization | `task(agent_type="omg:self-improve", model="claude-sonnet-4.6", mode="sync")` | high |
+| Investigation → spec | `task(agent_type="omg:deep-dive", model="claude-sonnet-4.6", mode="sync")` | high |
 | Causal trace | `task(agent_type="omg:tracer", model="claude-sonnet-4.6", mode="sync")` | high |
 | External docs | `task(agent_type="omg:document-specialist", model="claude-sonnet-4.6", mode="background")` | medium |
 | Architecture | `task(agent_type="omg:architect", model="claude-opus-4.6", mode="sync")` | xhigh |
