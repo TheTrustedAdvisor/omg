@@ -562,6 +562,22 @@ For instructions that ARE followed (agent identity, tool usage, output format), 
 
 **Positive finding:** Tool restriction + orchestrator identity DOES produce some delegation (0% → 5%). The agent occasionally delegates to `omg:executor` and `omg:git-master`, which is an improvement from zero delegation. But it's not reliable enough for guaranteed multi-agent orchestration.
 
+### 10.1d model: Parameter Has No Effect (Platform Limitation)
+
+**Finding:** The `model:` property in agent frontmatter and the `model` parameter in `task()` calls are both ignored by Copilot CLI. All agents and sub-agents run on the session default model (currently Sonnet 4.6).
+
+**Evidence:**
+
+| Context | model: specified | Actual model |
+|---------|-----------------|-------------|
+| Agent frontmatter (explore) | claude-haiku-4.5 | claude-sonnet-4.6 |
+| Agent frontmatter (architect) | claude-opus-4.6 | claude-sonnet-4.6 |
+| task() call parameter | claude-haiku-4.5 | claude-sonnet-4.6 |
+
+**Implication:** Multi-model routing (haiku for speed, opus for depth) has never been active. All 28 agents run on the same model. Cost optimization via model tiers is not possible until this is fixed or clarified by the Copilot CLI team (github/copilot-cli#2564).
+
+**Workaround:** Users can change the session model with `/model` or `--model` CLI flag. But per-agent model routing is not available.
+
 ### 10.2 AGENTS.md is the Most Reliable Instruction Surface
 
 **Finding:** Instructions in `AGENTS.md` are followed more reliably than instructions in individual skill files, because AGENTS.md is loaded into **every** session automatically.
