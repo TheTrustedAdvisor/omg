@@ -36,15 +36,12 @@ Broad requests have: vague verbs ("improve", "add"), no specific files/functions
 ### Protocol
 
 1. **Classify** the request — broad triggers interview mode
-2. **Gather codebase facts FIRST** — spawn `task(agent_type="omg:explore", model="claude-haiku-4.5", mode="background")` before asking the user
+2. **Gather codebase facts FIRST** — explore the codebase (use @omg:explore if available) before asking the user
 3. **Ask ONE focused question** at a time using `ask_user`
    - NEVER batch multiple questions
    - Each question builds on the previous answer
    - Only ask about preferences/priorities/scope — NOT codebase facts
-4. **Consult @omg:analyst** for hidden requirements and edge cases:
-   ```
-   task(agent_type="omg:analyst", prompt="Gap analysis for: {requirements so far}", model="claude-opus-4.6", mode="sync")
-   ```
+4. **Consult @omg:analyst** for hidden requirements and edge cases — perform a gap analysis on requirements gathered so far, focusing on missing constraints and edge cases
 5. **Create plan** when user signals readiness ("create the plan", "I'm ready")
 
 ### Question Classification
@@ -58,11 +55,7 @@ Broad requests have: vague verbs ("improve", "add"), no specific files/functions
 
 ## Direct Mode (Detailed Requests)
 
-1. **Run @omg:analyst pre-flight** (not optional):
-   ```
-   task(agent_type="omg:analyst", model="claude-opus-4.6", mode="sync",
-     prompt="Brief gap analysis for: {request}. Focus on: missing acceptance criteria, ambiguous scope, untestable requirements. 2-3 key findings only.")
-   ```
+1. **Run @omg:analyst pre-flight** (not optional): perform a brief gap analysis on the request, focusing on missing acceptance criteria, ambiguous scope, and untestable requirements (2-3 key findings). @omg:analyst can help with this.
    This sharpens acceptance criteria and catches scope gaps — cross-platform testing showed plans without analyst consultation produce vague criteria.
 2. Generate comprehensive work plan incorporating analyst findings
 3. Optional @omg:critic review for high-risk changes
@@ -76,27 +69,21 @@ Full iterative loop with structured deliberation:
    - Decision Drivers (top 3)
    - Viable Options (≥2) with bounded pros/cons
    - If only 1 option survives: explicit invalidation rationale
-   ```
-   task(agent_type="omg:planner", prompt="Create plan with RALPLAN-DR summary: ...", model="claude-opus-4.6", mode="sync")
-   ```
+   Create the initial plan with a RALPLAN-DR summary. @omg:planner can help with this.
 
 2. **@omg:architect** reviews for architectural soundness — MUST provide:
    - Strongest steelman antithesis against favored option
    - At least one meaningful trade-off tension
    - Synthesis path (if viable)
-   ```
-   task(agent_type="omg:architect", prompt="Review plan: {plan}. Provide antithesis + trade-offs.", model="claude-opus-4.6", mode="sync")
-   ```
-   **Wait for architect to complete before spawning critic.**
+   Review the plan for architectural soundness, providing antithesis and trade-offs. @omg:architect can help with this.
+   **Complete the architect review before proceeding to the critic.**
 
 3. **@omg:critic** evaluates quality — MUST verify:
    - Principle-option consistency
    - Fair alternative exploration
    - Testable acceptance criteria
    - Concrete verification steps
-   ```
-   task(agent_type="omg:critic", prompt="Evaluate plan: {plan} + architect review: {review}", model="claude-opus-4.6", mode="sync")
-   ```
+   Evaluate the plan and architect review together. @omg:critic can help with this.
 
 4. **Re-review loop** (max 5 iterations):
    - If critic rejects: collect ALL feedback, revise plan, return to step 2

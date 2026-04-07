@@ -41,11 +41,7 @@ npm run typecheck && npm run lint && npm test
 
 ### 2. Run Quality Gate
 
-Invoke the quality-gate construction agent:
-```
-task(agent_type="general-purpose", model="claude-sonnet-4.6", mode="sync",
-  prompt="Read dev-agents/quality-gate.agent.md. Run all 10 checks against plugin/.")
-```
+Run the quality gate checks against `plugin/`. If `dev-agents/quality-gate.agent.md` exists, follow its checklist. Otherwise run: agent count, skill count, model ID format, tool names, frontmatter validation.
 
 **ABORT if quality gate fails.**
 

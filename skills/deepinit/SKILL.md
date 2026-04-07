@@ -17,24 +17,15 @@ tags:
 
 ### Phase 1: Explore
 
-Map the entire project structure:
-```
-task(agent_type="omg:explore", prompt="THOROUGH exploration: map all directories, entry points, config files, test structure, CI/CD. Report with absolute paths.", model="claude-haiku-4.5", mode="sync")
-```
+Thoroughly map the entire project structure: all directories, entry points, config files, test structure, CI/CD. Report with absolute paths. @omg:explore can help with this.
 
 ### Phase 2: Analyze
 
-Invoke @omg:architect for deep analysis:
-```
-task(agent_type="omg:architect", prompt="Analyze codebase architecture. Identify: (1) core data flow, (2) key abstractions, (3) dependency graph, (4) design patterns, (5) testing strategy. Cite file:line.", model="claude-opus-4.6", mode="sync")
-```
+Perform deep architectural analysis: identify (1) core data flow, (2) key abstractions, (3) dependency graph, (4) design patterns, (5) testing strategy. Cite file:line references. @omg:architect can help with this.
 
 ### Phase 3: Document
 
-Invoke @omg:writer to produce structured documentation:
-```
-task(agent_type="omg:writer", prompt="Generate ARCHITECTURE.md from these findings: {explore + architect output}. Include: overview, component map, data flow, entry points, conventions, how to contribute.", model="claude-haiku-4.5", mode="sync")
-```
+Generate structured documentation from the exploration and analysis findings. Include: overview, component map, data flow, entry points, conventions, how to contribute. @omg:writer can help with this.
 
 ### Phase 4: Output
 

@@ -42,10 +42,10 @@ Each stage gates on a different quality dimension:
 
 1. **Parse the user's idea** from the prompt
 2. **Detect brownfield vs greenfield:**
-   - Spawn `task(agent_type="omg:explore", mode="background", model="claude-haiku-4.5")` to check if cwd has existing source code
+   - Explore the current directory to check if it has existing source code (@omg:explore can help)
    - If source files exist AND user's idea references modifying something: **brownfield**
    - Otherwise: **greenfield**
-3. **For brownfield:** spawn @omg:explore to map relevant codebase areas
+3. **For brownfield:** map relevant codebase areas before asking the user (@omg:explore can help)
 4. **Initialize tracking:** create `.omg/research/interview-{slug}-state.json`:
    ```json
    {
@@ -209,7 +209,7 @@ Present execution options via `ask_user`:
 ## Tool Usage
 
 - Use `ask_user` for each interview question (one at a time)
-- Use `task(agent_type="omg:explore", model="claude-haiku-4.5")` for brownfield codebase exploration — run BEFORE asking user
+- Explore the codebase (@omg:explore can help) for brownfield codebase exploration — run BEFORE asking user
 - Use `edit`/`create` to save state and spec to `.omg/research/`
 - Use `store_memory` to index the spec for downstream consumption
 

@@ -15,12 +15,9 @@ tags:
 
 ## Workflow
 
-1. Spawn @omg:architect with opus model for deep analysis:
-   ```
-   task(agent_type="omg:architect", prompt="DEEP ANALYSIS: {problem}. Consider all angles. Trace through the code. Identify trade-offs. Take your time.", model="claude-opus-4.6", mode="sync")
-   ```
-2. If the problem is a bug: spawn @omg:tracer instead for evidence-driven causal tracing
-3. If the problem is a plan: spawn @omg:critic for multi-perspective review
+1. Perform deep analysis of the problem using opus-class reasoning (claude-opus-4.6). Consider all angles, trace through the code, identify trade-offs. @omg:architect can help with architectural depth.
+2. If the problem is a bug: delegate to @omg:tracer for evidence-driven causal tracing
+3. If the problem is a plan: delegate to @omg:critic for multi-perspective review
 4. Present analysis with evidence and trade-offs
 
 ## When to Combine

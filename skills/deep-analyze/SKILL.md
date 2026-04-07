@@ -14,17 +14,12 @@ tags:
 
 ## Workflow
 
-1. **Explore** — map the area under analysis:
-   ```
-   task(agent_type="omg:explore", prompt="Map all files and patterns related to: {topic}", model="claude-haiku-4.5", mode="background")
-   ```
+1. **Explore** — map all files and patterns related to the topic. @omg:explore can help with this.
 
-2. **Analyze from multiple perspectives** (parallel):
-   ```
-   task(agent_type="omg:architect", prompt="Architectural analysis of: {topic}", model="claude-opus-4.6", mode="background")
-   task(agent_type="omg:security-reviewer", prompt="Security analysis of: {topic}", model="claude-opus-4.6", mode="background")
-   task(agent_type="omg:code-reviewer", prompt="Code quality analysis of: {topic}", model="claude-opus-4.6", mode="background")
-   ```
+2. **Analyze from multiple perspectives** (in parallel where possible):
+   - Review for architectural soundness, trade-offs, and design patterns. @omg:architect can help.
+   - Review for security vulnerabilities and threat surface. @omg:security-reviewer can help.
+   - Review for code quality, maintainability, and anti-patterns. @omg:code-reviewer can help.
 
 3. **Synthesize** findings from all perspectives:
    - Areas of agreement

@@ -25,21 +25,9 @@ tags:
 
 Identify: what specific information? Which library/API/framework? What version?
 
-### 2. Spawn Document Specialists
+### 2. Research via Document Specialists
 
-For broad research, spawn multiple in parallel:
-```
-task(agent_type="omg:document-specialist", model="claude-sonnet-4.6", mode="background",
-  prompt="Research: {topic}. Find official documentation. Cite sources with URLs.")
-```
-
-For comparative research (e.g., "Redis vs Memcached"):
-```
-task(agent_type="omg:document-specialist", model="claude-sonnet-4.6", mode="background",
-  prompt="Research Redis for caching: features, setup, Node.js client. Official docs only.")
-task(agent_type="omg:document-specialist", model="claude-sonnet-4.6", mode="background",
-  prompt="Research Memcached for caching: features, setup, Node.js client. Official docs only.")
-```
+Research the topic using `web_fetch` or by delegating to @omg:document-specialist agents. For broad research, run multiple searches in parallel. For comparative research (e.g., "Redis vs Memcached"), investigate each option separately and compare.
 
 ### 3. Synthesize
 

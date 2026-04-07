@@ -14,11 +14,9 @@ tags:
 
 ## Workflow
 
-1. Spawn @omg:explore with thoroughness=high:
-   ```
-   task(agent_type="omg:explore", prompt="THOROUGH search: {query}. Search from 5+ angles: exact name, camelCase/snake_case variants, usages, tests, docs, config. Cross-validate findings. Report ALL matches with absolute paths.", model="claude-haiku-4.5", mode="sync")
-   ```
-2. If results are insufficient, follow up with targeted searches via `grep`/`glob`
+1. Search from 5+ angles: exact name, camelCase/snake_case variants, usages, tests, docs, config. Delegate to @omg:explore for thorough codebase mapping.
+2. Cross-validate findings across search strategies
+3. If results are insufficient, follow up with targeted `grep`/`glob` searches
 3. For symbol-level search: check imports, exports, type definitions, test mocks
 4. Present structured findings with relationships
 

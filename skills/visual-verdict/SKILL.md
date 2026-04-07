@@ -71,11 +71,7 @@ Rate each dimension:
 
 ### 5. Fix Delegation
 
-If fixes needed:
-```
-task(agent_type="omg:designer", model="claude-sonnet-4.6", mode="sync",
-  prompt="Fix these visual issues: {fix list from verdict}")
-```
+If fixes needed, implement the fix list. Delegate to @omg:designer for UI-specific corrections.
 
 Re-run visual verdict after fixes to confirm.
 

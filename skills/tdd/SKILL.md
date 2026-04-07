@@ -19,30 +19,17 @@ tags:
 
 ## Workflow
 
-1. Spawn @omg:test-engineer to write the first failing test:
-   ```
-   task(agent_type="omg:test-engineer", prompt="TDD RED phase: Write a failing test for: {feature}. The test MUST fail when run. Do NOT write any production code.", model="claude-sonnet-4.6", mode="sync")
-   ```
+1. **RED:** Write a failing test for the feature. The test MUST fail when run. Do NOT write production code yet. Delegate to @omg:test-engineer if available.
 
-2. Verify the test fails via `bash`:
-   ```
-   npm test -- --grep "{test name}"
-   ```
-   If it passes → test is wrong, rewrite it.
+2. **Verify RED:** Run the test via `bash`. If it passes → the test is wrong, rewrite it.
 
-3. Spawn @omg:executor to write minimal code to pass:
-   ```
-   task(agent_type="omg:executor", prompt="TDD GREEN phase: Write ONLY enough code to make this test pass: {test}. No extras. No 'while I'm here.'", model="claude-sonnet-4.6", mode="sync")
-   ```
+3. **GREEN:** Write ONLY enough production code to make the test pass. No extras. No "while I'm here." Delegate to @omg:executor if available.
 
-4. Verify the test passes via `bash`.
+4. **Verify GREEN:** Run the test via `bash`. Must pass now.
 
-5. Spawn @omg:code-simplifier for refactor phase:
-   ```
-   task(agent_type="omg:code-simplifier", prompt="TDD REFACTOR phase: Clean up the implementation without changing behavior. Tests must stay green.", model="claude-opus-4.6", mode="sync")
-   ```
+5. **REFACTOR:** Clean up the implementation without changing behavior. Tests must stay green. Delegate to @omg:code-simplifier if available.
 
-6. Verify tests still pass.
+6. **Verify REFACTOR:** Run all tests via `bash`. Must still pass.
 
 7. **Repeat** from step 1 for the next feature increment.
 

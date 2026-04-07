@@ -37,10 +37,7 @@ Determine scope:
 
 ### 2. Analyze
 
-Invoke @omg:code-simplifier:
-```
-task(agent_type="omg:code-simplifier", prompt="Review these files for AI slop patterns: {file list}. Focus on: unnecessary abstractions, verbose comments restating code, over-engineered error handling, debug artifacts. Simplify without changing behavior.", model="claude-opus-4.6", mode="sync")
-```
+Review the identified files for AI slop patterns: unnecessary abstractions, verbose comments restating code, over-engineered error handling, debug artifacts. Simplify without changing behavior. Delegate to @omg:code-simplifier for systematic cleanup.
 
 ### 3. Verify
 

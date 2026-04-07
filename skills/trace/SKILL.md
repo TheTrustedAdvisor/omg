@@ -49,10 +49,7 @@ Higher-ranked evidence overrides lower-ranked.
 
 ### Phase 1: Observe
 
-Invoke @omg:tracer:
-```
-task(agent_type="omg:tracer", prompt="TRACE: Observation: {what happened}. Restate precisely. Generate 3+ competing hypotheses from different frames (code-path, config/env, measurement artifact). Gather evidence for and against each.", model="claude-sonnet-4.6", mode="sync")
-```
+Investigate the observation by generating 3+ competing hypotheses from different frames (code-path, config/env, measurement artifact). Gather evidence for and against each. Delegate to @omg:tracer for deep causal analysis when available.
 
 ### Phase 2: Falsify
 
