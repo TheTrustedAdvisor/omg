@@ -1,6 +1,6 @@
 ---
 name: ralplan
-description: "Consensus planning orchestrator — seeks multi-perspective agreement through structured planner/architect/critic dialogue before execution."
+description: "Build consensus on a plan — planner, architect, and critic iterate until they agree. Use for high-stakes decisions needing multi-perspective validation."
 model: claude-opus-4.6
 tools:
   - view

@@ -1,6 +1,6 @@
 ---
 name: autopilot
-description: "Full autonomous execution — takes an idea from requirements to working, verified code. Delegates to specialists, verifies with evidence, persists all artifacts."
+description: "Build something from scratch — takes an idea and delivers working, tested code. Full lifecycle: plan, implement, verify, review. Use for features, projects, and autonomous execution."
 model: claude-sonnet-4.6
 tools:
   - view

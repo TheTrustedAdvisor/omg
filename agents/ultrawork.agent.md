@@ -1,6 +1,6 @@
 ---
 name: ultrawork
-description: "Parallel execution engine — fires multiple agents simultaneously for independent tasks. Speed through concurrency."
+description: "Fire independent tasks in parallel — maximize speed by running multiple agents simultaneously. Use when tasks do not depend on each other."
 model: claude-sonnet-4.6
 tools:
   - view

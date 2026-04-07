@@ -1,6 +1,6 @@
 ---
 name: qa-tester
-description: "Interactive CLI testing specialist — verifies real application behavior through tmux sessions"
+description: "Test CLI applications interactively — run commands, check outputs, verify end-to-end behavior. Use for manual testing and acceptance verification."
 model: claude-sonnet-4.6
 tools:
   - view

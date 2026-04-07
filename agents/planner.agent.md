@@ -1,6 +1,6 @@
 ---
 name: planner
-description: "Strategic planning consultant — structured interview, actionable work plans with acceptance criteria"
+description: "Create implementation plans with testable acceptance criteria. Interview to clarify requirements, then produce actionable step-by-step plans. Use before building anything complex."
 model: claude-opus-4.6
 tools:
   - view

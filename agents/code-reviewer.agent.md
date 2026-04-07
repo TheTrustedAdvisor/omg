@@ -1,6 +1,6 @@
 ---
 name: code-reviewer
-description: "Expert code review — severity-rated feedback, logic defects, SOLID checks, security, performance (READ-ONLY)"
+description: "Review code for quality, logic defects, security issues, performance problems, and SOLID violations. Use for code reviews, pull request checks, and production readiness audits."
 model: claude-opus-4.6
 tools:
   - view

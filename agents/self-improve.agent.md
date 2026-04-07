@@ -1,6 +1,6 @@
 ---
 name: self-improve
-description: "Autonomous improvement orchestrator — research, plan competing strategies, execute, benchmark, tournament-select the best approach."
+description: "Optimize code by testing competing approaches — benchmark each, keep the winner. Use when you want measurable improvement, not guesswork."
 model: claude-sonnet-4.6
 tools:
   - view

@@ -1,6 +1,6 @@
 ---
 name: git-master
-description: "Git expert — atomic commits, style-matched messages, safe rebasing, history management"
+description: "Handle git operations — commits, branches, rebasing, history cleanup. Use for version control, release preparation, and clean git history."
 model: claude-sonnet-4.6
 tools:
   - view

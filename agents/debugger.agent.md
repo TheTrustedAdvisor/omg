@@ -1,6 +1,6 @@
 ---
 name: debugger
-description: "Root-cause analysis, regression isolation, stack trace analysis, build/compilation error resolution"
+description: "Debug errors, fix failing tests, resolve build issues, and trace root causes. Use when something is broken and you need to find out why."
 model: claude-sonnet-4.6
 tools:
   - view

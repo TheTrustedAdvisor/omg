@@ -1,6 +1,6 @@
 ---
 name: designer
-description: "UI/UX designer-developer — stunning, production-grade interfaces with intentional aesthetics"
+description: "Design and implement user interfaces — responsive layouts, accessible components, production-grade aesthetics. Use for frontend work, UI fixes, and visual design."
 model: claude-sonnet-4.6
 tools:
   - view

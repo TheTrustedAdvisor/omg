@@ -1,6 +1,6 @@
 ---
 name: test-engineer
-description: "Test strategy, TDD workflows, integration/e2e coverage, flaky test hardening"
+description: "Write tests, design test strategies, fix flaky tests, and improve coverage. Use for TDD, adding missing tests, and test infrastructure work."
 model: claude-sonnet-4.6
 tools:
   - view

@@ -1,6 +1,6 @@
 ---
 name: ralph
-description: "Persistence loop orchestrator — keeps working until all acceptance criteria pass with verified evidence. Never stops until done or blocked."
+description: "Keep working until it is done — iterates implementation and verification until all acceptance criteria pass with proof. Use when you need guaranteed completion."
 model: claude-sonnet-4.6
 tools:
   - view

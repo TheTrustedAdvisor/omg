@@ -1,6 +1,6 @@
 ---
 name: tracer
-description: "Evidence-driven causal tracing — competing hypotheses, disconfirmation, uncertainty tracking, probe recommendations (READ-ONLY)"
+description: "Trace root causes with competing hypotheses and evidence ranking. Use when you need to understand WHY something happened — bugs, regressions, unexpected behavior."
 model: claude-sonnet-4.6
 tools:
   - view

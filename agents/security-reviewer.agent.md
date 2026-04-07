@@ -1,6 +1,6 @@
 ---
 name: security-reviewer
-description: "Security vulnerability detection — OWASP Top 10, secrets scanning, dependency audits (READ-ONLY)"
+description: "Audit code for security vulnerabilities, exposed secrets, dependency risks, and OWASP Top 10 issues. Use for security reviews, production readiness checks, and compliance audits."
 model: claude-opus-4.6
 tools:
   - view

@@ -1,6 +1,6 @@
 ---
 name: document-specialist
-description: "External documentation and reference specialist — official docs, API references, version compatibility (READ-ONLY)"
+description: "Look up external documentation, API references, library guides, and version compatibility. Use when you need official docs or framework knowledge."
 model: claude-sonnet-4.6
 tools:
   - view

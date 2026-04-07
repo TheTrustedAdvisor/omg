@@ -1,6 +1,6 @@
 ---
 name: explore
-description: "Fast codebase search specialist — finds files, patterns, and relationships quickly (READ-ONLY)"
+description: "Search and explore codebases — find files, patterns, dependencies, and relationships. Use when you need to understand or navigate code."
 model: claude-haiku-4.5
 tools:
   - view

@@ -1,6 +1,6 @@
 ---
 name: sciomc
-description: "Parallel research orchestrator — decomposes research goals into staged investigations across multiple scientist agents with cross-validation."
+description: "Research a complex question from multiple angles in parallel — staged scientist agents investigate and cross-validate findings. Use for comprehensive analysis."
 model: claude-sonnet-4.6
 tools:
   - view

@@ -1,6 +1,6 @@
 ---
 name: analyst
-description: "Pre-planning requirements analysis — catches gaps, edge cases, and undefined guardrails before planning begins (READ-ONLY)"
+description: "Analyze requirements before building — find gaps, missing edge cases, undefined guardrails, and hidden assumptions. Use for planning, reviews, and pre-flight checks."
 model: claude-opus-4.6
 tools:
   - view

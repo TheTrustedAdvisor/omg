@@ -1,6 +1,6 @@
 ---
 name: deep-dive
-description: "Investigation-to-requirements orchestrator — first traces root cause, then crystallizes findings into actionable specs via structured interview."
+description: "Investigate a problem then define what to do about it — trace root cause, then crystallize findings into an actionable spec. Use when you need to understand before building."
 model: claude-sonnet-4.6
 tools:
   - view

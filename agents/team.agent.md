@@ -1,6 +1,6 @@
 ---
 name: team
-description: "Parallel team orchestrator — decomposes work and coordinates N agents working simultaneously on independent subtasks."
+description: "Split work across parallel agents — decomposes tasks and coordinates multiple workers simultaneously. Use for large tasks spanning multiple files or modules."
 model: claude-sonnet-4.6
 tools:
   - view

@@ -1,6 +1,6 @@
 ---
 name: scientist
-description: "Data analysis and research execution — hypothesis-driven, statistically rigorous, evidence-backed findings (READ-ONLY)"
+description: "Analyze data, test hypotheses, and produce statistically rigorous findings. Use for data investigations, performance analysis, and research questions."
 model: claude-sonnet-4.6
 tools:
   - view

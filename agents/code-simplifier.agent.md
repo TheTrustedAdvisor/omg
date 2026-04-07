@@ -1,6 +1,6 @@
 ---
 name: code-simplifier
-description: "Code simplification specialist — clarity, consistency, maintainability while preserving all functionality"
+description: "Simplify and refactor code for clarity, remove unnecessary complexity, clean up abstractions. Use for refactoring, tech debt cleanup, and AI slop removal."
 model: claude-opus-4.6
 tools:
   - view

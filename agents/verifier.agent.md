@@ -1,6 +1,6 @@
 ---
 name: verifier
-description: "Verification strategy, evidence-based completion checks, test adequacy"
+description: "Verify that work is complete — run tests, check acceptance criteria, produce PASS/FAIL verdicts with evidence. Use after implementation to confirm everything works."
 model: claude-sonnet-4.6
 tools:
   - view

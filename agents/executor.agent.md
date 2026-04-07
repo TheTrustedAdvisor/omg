@@ -1,6 +1,6 @@
 ---
 name: executor
-description: "Focused task executor for implementation work — smallest viable diff, evidence-based verification"
+description: "Implement code changes, write features, fix bugs, and verify with tests. The workhorse agent for any coding task. Use for implementation work of any size."
 model: claude-sonnet-4.6
 tools:
   - view

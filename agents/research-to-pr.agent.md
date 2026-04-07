@@ -1,6 +1,6 @@
 ---
 name: research-to-pr
-description: "Flagship orchestrator — deep investigation then cloud agent creates PR automatically. Combines task subagents, GitHub MCP, and /delegate."
+description: "Investigate a problem then create a PR automatically — research locally, implement, and hand off to cloud agent for PR creation. Copilot-exclusive workflow."
 model: claude-sonnet-4.6
 tools:
   - view

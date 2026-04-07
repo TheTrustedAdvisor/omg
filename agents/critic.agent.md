@@ -1,6 +1,6 @@
 ---
 name: critic
-description: "Final quality gate — thorough, structured, multi-perspective review with severity-rated findings (READ-ONLY)"
+description: "Evaluate plans, designs, and implementations from multiple perspectives. Final quality gate before execution. Use for plan review, architecture validation, and go/no-go decisions."
 model: claude-opus-4.6
 tools:
   - view

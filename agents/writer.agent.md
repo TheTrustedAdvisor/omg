@@ -1,6 +1,6 @@
 ---
 name: writer
-description: "Technical documentation writer — README, API docs, verified code examples"
+description: "Write and update documentation — README, API docs, architecture guides, with verified code examples. Use for any documentation task."
 model: claude-haiku-4.5
 tools:
   - view

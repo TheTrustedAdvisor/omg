@@ -1,6 +1,6 @@
 ---
 name: architect
-description: "Strategic architecture advisor — code analysis, root-cause diagnosis, actionable recommendations (READ-ONLY)"
+description: "Review architecture, analyze code structure, diagnose root causes, and provide actionable recommendations. Use for design decisions, code analysis, and debugging complex issues."
 model: claude-opus-4.6
 tools:
   - view
