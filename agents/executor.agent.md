@@ -11,7 +11,6 @@ tools:
   - web_fetch
   - task
   - ask_user
-  - task
 
 ---
 

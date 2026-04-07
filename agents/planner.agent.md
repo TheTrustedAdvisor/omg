@@ -10,7 +10,6 @@ tools:
   - edit
   - task
   - ask_user
-  - task
 
 ---
 
