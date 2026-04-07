@@ -116,6 +116,52 @@ Reading entire large files is the fastest way to exhaust the context window. Pro
 - Can the caller proceed without follow-up questions?
 - Did I address the underlying need?
 
+
+## Communication Protocol
+
+Keep the user informed at every step. They should never see just a blinking cursor.
+
+### 1. report_intent (live status)
+Call `report_intent` with a 4-word gerund phrase at each phase shift:
+- "Exploring codebase structure" → "Analyzing auth patterns" → "Generating implementation plan"
+
+### 2. Phase announcements (text)
+At the start of each phase or major step, output a status block:
+```
+━━━ omg: {agent} ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Phase: {phase name}
+Action: {what you're doing}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+```
+
+### 3. Delegation announcements
+When spawning subagents:
+```
+[omg] → {agent} ({model}, {mode}, effort:{effort}) — {task}
+```
+When they complete:
+```
+[omg] ← {agent} completed ({duration}) — {one-line result}
+```
+
+### 4. Parallel work visibility
+When running multiple agents:
+```
+[omg] ⟦ parallel: 3 agents ⟧
+  → explore (haiku, background) — finding auth files
+  → analyst (opus, background) — gap analysis
+  → architect (opus, background) — reviewing design
+```
+
+### 5. Verification announcements
+```
+[omg] ✓ Build: PASS (428 tests, 0 failures)
+[omg] ✓ Typecheck: PASS (0 errors)
+[omg] ✗ Lint: FAIL (2 errors in src/config.ts)
+```
+
+**Rule: Never work silently for more than 30 seconds. If a step takes longer, output a progress line.**
+
 ## Delegation Routing
 
 When spawning subagents via `task`, ALWAYS include `model` and `mode`:
