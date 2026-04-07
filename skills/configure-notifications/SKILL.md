@@ -49,16 +49,30 @@ Which notification service?
 
 ### 3. Save Configuration
 
-Write to `.omg/research/notifications-config.json`:
+Save configuration using environment variables (NEVER store tokens in files):
+
 ```json
+// .omg/research/notifications-config.json (NO secrets — only provider + enabled flag)
 {
   "provider": "telegram|discord|slack",
-  "telegram": { "botToken": "...", "chatId": "..." },
-  "discord": { "webhookUrl": "..." },
-  "slack": { "webhookUrl": "..." },
   "enabled": true
 }
 ```
+
+Instruct the user to set secrets as environment variables:
+```bash
+# Telegram
+export OMG_TELEGRAM_TOKEN="bot123:ABC..."
+export OMG_TELEGRAM_CHAT_ID="123456789"
+
+# Discord
+export OMG_DISCORD_WEBHOOK_URL="https://discord.com/api/webhooks/..."
+
+# Slack
+export OMG_SLACK_WEBHOOK_URL="https://hooks.slack.com/services/..."
+```
+
+**SECURITY: NEVER write tokens or webhook URLs to files. Use environment variables only.**
 
 Index via `store_memory` key `omg:notifications` → `{ "provider": "telegram", "enabled": true }`.
 
