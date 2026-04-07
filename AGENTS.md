@@ -60,6 +60,16 @@ When running multiple agents:
 [omg] ✗ Lint: FAIL (2 errors in src/config.ts)
 ```
 
+## Reading Background Agent Output
+
+When reading output from a background `task` agent:
+
+1. Call `read_agent` **once**. Accept whatever it returns.
+2. If the output is in a temp file: read that file **once** with `view`. Do NOT re-read or pipe through python.
+3. If the output is large: summarize the key findings in your response. Do NOT try to display the full raw output.
+4. **Never enter a read loop.** If `read_agent` returns a file reference, read it, extract what you need, move on.
+5. For very large results: ask the background agent to summarize before returning (include "Summarize your findings in under 50 lines" in the task prompt).
+
 ## Workflow Selection
 
 Match the user's intent to the right workflow:
