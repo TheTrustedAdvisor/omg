@@ -501,3 +501,92 @@ graph TB
 
 The pipeline is the **compiler**. The plugin is the **binary**. Users get the binary.
 The pipeline + CI keeps the plugin in sync with OMC upstream automatically.
+
+---
+
+## 10. Architectural Findings from Testing
+
+Empirical findings from 662 tests (502 static, 110 behavioral, 29 E2E scenarios + 21 orchestration). These patterns are not theoretical — they were discovered through systematic testing against the real Copilot CLI.
+
+### 10.1 Instruction Placement Determines Compliance
+
+**Finding:** LLM agents follow instructions at the **beginning** and **end** of a prompt far more reliably than instructions in the middle. This is the single most important architectural insight for prompt-based orchestration.
+
+| Position | Compliance Rate | Use For |
+|----------|----------------|---------|
+| First 20% of prompt | ~95% | Core identity, mandatory rules, tool constraints |
+| Middle 40-60% | ~60% | Reference material, detailed protocols |
+| Last 20% of prompt | ~85% | Checklists, mandatory output format, persistence |
+
+**Implication:** Mandatory behaviors (like persistence) must be either at the very top of a SKILL.md or enforced via a checklist at the bottom. Placing them between protocol details causes non-deterministic compliance.
+
+**Evidence:** `ralplan` review log persistence was placed in the middle of the skill — compliance was 0% across 3 test runs. Moving it to the top and adding a mandatory checklist improved compliance but did not guarantee it (Issue #36).
+
+### 10.2 AGENTS.md is the Most Reliable Instruction Surface
+
+**Finding:** Instructions in `AGENTS.md` are followed more reliably than instructions in individual skill files, because AGENTS.md is loaded into **every** session automatically.
+
+```
+Reliability hierarchy:
+  AGENTS.md (always loaded)  > Agent .agent.md (loaded on invocation)  > SKILL.md (loaded on activation)
+```
+
+**Implication:** Cross-cutting concerns (persistence convention, communication protocol, tool naming) belong in AGENTS.md, not duplicated across individual agents/skills.
+
+### 10.3 Agent Namespace is Critical
+
+**Finding:** `@debugger` does not resolve to `@omg:debugger` in Copilot. Without the `omg:` namespace prefix, the agent is not found and the delegation silently fails.
+
+**Evidence:** 3 skills (`debug`, `ralplan`, `self-improve`) had unnamespaced agent references (`@planner`, `@debugger`, `@executor`). L1 static tests caught these before any user encountered the bug.
+
+**Rule:** Every agent reference must use the full `@omg:agent-name` format, and every `task()` call must use `agent_type="omg:agent-name"`.
+
+### 10.4 Skills Modify the Repository
+
+**Finding:** Several skills create real files and branches during execution:
+
+| Skill | Side Effect |
+|-------|-------------|
+| `learner`, `skillify` | Create new skill directories in `plugin/skills/` |
+| `tdd`, `autopilot` | Create source files and test files |
+| `project-session-manager` | Creates git branches |
+| `git-master` | Creates commits |
+
+**Implication:** E2E tests must run in an isolated worktree or temporary directory. After testing: `git checkout -- .` to revert unintended changes.
+
+### 10.5 Plugin Version Drift
+
+**Finding:** `copilot plugin install` caches the plugin. Editing files in the plugin directory does NOT update the installed version. You must re-install explicitly.
+
+**Implication:** L2/L3 test scripts should verify the installed plugin version matches `plugin.json` before running. Otherwise, tests validate stale code.
+
+### 10.6 Parallel Execution is Real
+
+**Finding:** Multiple `task(mode="background")` calls execute truly in parallel — confirmed via timing analysis. 3 parallel tasks complete in ~3s, not 9s.
+
+**Implication:** `ultrawork`, `team`, `sciomc`, `research-to-pr` genuinely benefit from parallel dispatch. The bottleneck is API rate limits, not serialization.
+
+### 10.7 Communication Protocol Compliance is High
+
+**Finding:** `report_intent` and phase announcements were detected in 100% of L2 agent tests (41/41). The AGENTS.md Communication Protocol section is reliably followed.
+
+**Implication:** Centralizing the protocol in AGENTS.md (rather than per-agent) was the right design decision.
+
+### 10.8 Test Pyramid for LLM Orchestration
+
+The effective test pyramid for prompt-based multi-agent systems:
+
+```mermaid
+graph TD
+    L1["L1: Static Validation (vitest)<br/>Structure, references, model IDs<br/>502 tests, &lt;1s, CI"]
+    L2["L2: Behavioral CLI<br/>Agent responds, role-appropriate<br/>110 tests, ~5min, semi-automated"]
+    L3["L3: Orchestration E2E<br/>Multi-phase workflows, persistence<br/>29 checks, ~30min, manual"]
+    
+    L1 --> L2 --> L3
+    
+    style L1 fill:#51cf66,color:#000
+    style L2 fill:#ffd43b,color:#000
+    style L3 fill:#ff6b6b,color:#fff
+```
+
+**Key insight:** L1 catches ~80% of bugs (wrong tool names, missing namespaces, stale model IDs) in under 1 second. L2 confirms agents actually load and respond. L3 is expensive but essential for verifying multi-agent handoffs and persistence.
