@@ -70,6 +70,33 @@ When reading output from a background `task` agent:
 4. **Never enter a read loop.** If `read_agent` returns a file reference, read it, extract what you need, move on.
 5. For very large results: ask the background agent to summarize before returning (include "Summarize your findings in under 50 lines" in the task prompt).
 
+## Language Handling
+
+**Users may speak any language.** Before matching intent to agents or skills, translate the user's request to English keywords internally. All agent descriptions and skill triggers are in English.
+
+Example: "Kannst du ein Security Review machen?" → intent: "security review" → @omg:security-reviewer
+
+Always respond in the user's language, but match against English keywords internally.
+
+## Version Compatibility
+
+Check the Copilot CLI version for feature availability:
+
+```bash
+copilot --version 2>/dev/null | grep -oP '\d+\.\d+\.\d+'
+```
+
+| Feature | Min Version | Fallback |
+|---------|-------------|----------|
+| Custom agents + skills | 1.0.0 | Core — always available |
+| task() sub-agents | 1.0.0 | Core — always available |
+| /delegate cloud handoff | 1.0.8 | Implement locally instead |
+| Built-in Critic agent | 1.0.18 | Use omg:critic directly |
+| preToolUse auto-approve | 1.0.18 | User approves manually |
+| BYOK / local models | 1.0.20 | Use GitHub-hosted models |
+
+If a feature requires a newer version, inform the user: "This feature requires Copilot CLI v{version}+. Run `copilot update` to upgrade."
+
 ## Workflow Selection
 
 Match the user's intent to the right agent:
