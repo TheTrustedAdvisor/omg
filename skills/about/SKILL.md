@@ -21,7 +21,7 @@ Display the following information:
 
 Version:      0.3.0
 Agents:       28 (19 specialists + 9 orchestrators)
-Skills:       38 (capability triggers + discovery)
+Skills:       40 (capability triggers + discovery)
 Architecture: Agents orchestrate, skills provide capabilities
 
 Orchestrators:  autopilot · ralph · team · ralplan · ultrawork
