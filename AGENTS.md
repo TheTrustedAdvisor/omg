@@ -24,7 +24,7 @@ Users may speak any language. Translate their intent to English keywords, then r
 | Consensus plan, multi-perspective | `@omg:ralplan` | Planner → Architect → Critic loop |
 | Keep working, don't stop, must complete | `@omg:ralph` | Iterates until all criteria pass with proof |
 | Parallel, team, multiple files | `@omg:team` | N parallel workers on independent tasks |
-| Fire tasks simultaneously | `@omg:ultrawork` | Parallel execution, no verification |
+| Fire tasks simultaneously | `@omg:team` | Parallel execution (ultrawork = team alias) |
 | Search, find, explore, where is | `@omg:explore` | Multi-angle codebase search |
 | Test, TDD, coverage, write tests | `@omg:test-engineer` | Test strategy and implementation |
 | Investigate then PR, research and fix | `@omg:research-to-pr` | Research → cloud agent → auto PR |
@@ -208,7 +208,7 @@ All agents use `task()` with explicit `model` and `mode`:
 | Persistence loop (must complete) | `task(agent_type="omg:ralph", model="claude-sonnet-4.6", mode="sync")` | high |
 | Parallel team execution | `task(agent_type="omg:team", model="claude-sonnet-4.6", mode="sync")` | high |
 | Consensus planning | `task(agent_type="omg:ralplan", model="claude-opus-4.6", mode="sync")` | xhigh |
-| Parallel fire-and-forget | `task(agent_type="omg:ultrawork", model="claude-sonnet-4.6", mode="sync")` | medium |
+| Parallel fire-and-forget | `task(agent_type="omg:team", model="claude-sonnet-4.6", mode="sync")` | medium |
 | Research → auto PR | `task(agent_type="omg:research-to-pr", model="claude-sonnet-4.6", mode="sync")` | high |
 | Parallel research | `task(agent_type="omg:sciomc", model="claude-sonnet-4.6", mode="sync")` | high |
 | Autonomous optimization | `task(agent_type="omg:self-improve", model="claude-sonnet-4.6", mode="sync")` | high |

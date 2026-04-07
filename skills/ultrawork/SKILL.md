@@ -8,20 +8,10 @@ tags:
 
 ## Activation
 
-This skill activates the **ultrawork agent** for parallel task execution.
+This skill activates the **team agent** for parallel task execution.
 
-The ultrawork agent will:
-- Classify tasks as independent or dependent
-- Fire all independent tasks simultaneously
-- Run dependent tasks sequentially after prerequisites
-- Verify combined result (build, tests)
+"ultrawork" is an alias for team's parallel fire mode — use when tasks are independent and don't need decomposition.
 
 ## Trigger Keywords
 
 ultrawork, ulw, parallel execution, fire simultaneously
-
-## Quality Contract
-
-- Never serialize independent work
-- Each parallel worker gets explicit file boundaries
-- Lightweight verification after all tasks complete
