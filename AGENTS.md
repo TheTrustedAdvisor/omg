@@ -15,14 +15,13 @@ Users may speak any language. Translate their intent to English keywords, then r
 | Security, audit, vulnerabilities, OWASP | `@omg:security-reviewer` | Finds vulnerabilities, never fixes them |
 | Code review, quality, SOLID, logic | `@omg:code-reviewer` | Severity-rated findings, never fixes them |
 | Architecture, design, trade-offs | `@omg:architect` | Analyzes structure, never changes code |
-| Build, create, implement end-to-end | `@omg:autopilot` | Full lifecycle: plan → implement → verify |
+| Build, create, implement end-to-end | `@omg:autopilot` | Full lifecycle (say "ralph" for strict completion mode) |
 | Fix, debug, error, broken, failing | `@omg:debugger` | Finds root cause AND applies minimal fix |
 | Why did this happen, trace, investigate cause | `@omg:tracer` | Ranked hypotheses with evidence, no fix |
 | Investigate then define requirements | `@omg:deep-dive` | Trace → interview → actionable spec |
 | Plan, how should we, strategy | `@omg:planner` | Structured plan with acceptance criteria |
 | Analyze requirements, gaps, edge cases | `@omg:analyst` | Gap analysis before planning |
 | Consensus plan, multi-perspective | `@omg:ralplan` | Planner → Architect → Critic loop |
-| Keep working, don't stop, must complete | `@omg:ralph` | Iterates until all criteria pass with proof |
 | Parallel, team, multiple files | `@omg:team` | N parallel workers on independent tasks |
 | Fire tasks simultaneously | `@omg:team` | Parallel execution (ultrawork = team alias) |
 | Search, find, explore, where is | `@omg:explore` | Multi-angle codebase search |
@@ -205,7 +204,7 @@ All agents use `task()` with explicit `model` and `mode`:
 | Data analysis | `task(agent_type="omg:scientist", model="claude-sonnet-4.6", mode="sync")` | medium |
 | Interactive CLI testing | `task(agent_type="omg:qa-tester", model="claude-sonnet-4.6", mode="sync")` | medium |
 | Full autonomous execution | `task(agent_type="omg:autopilot", model="claude-sonnet-4.6", mode="sync")` | high |
-| Persistence loop (must complete) | `task(agent_type="omg:ralph", model="claude-sonnet-4.6", mode="sync")` | high |
+
 | Parallel team execution | `task(agent_type="omg:team", model="claude-sonnet-4.6", mode="sync")` | high |
 | Consensus planning | `task(agent_type="omg:ralplan", model="claude-opus-4.6", mode="sync")` | xhigh |
 | Parallel fire-and-forget | `task(agent_type="omg:team", model="claude-sonnet-4.6", mode="sync")` | medium |
