@@ -101,13 +101,13 @@ sequenceDiagram
 
     U->>A: autopilot: add authentication
     
-    rect rgb(40, 40, 60)
+    rect rgba(100, 130, 240, 0.15)
     Note over A,AN: Phase 1 — Expand
     A->>AN: Requirements analysis
     AN-->>A: Gaps, edge cases, guardrails
     end
 
-    rect rgb(40, 50, 40)
+    rect rgba(100, 200, 100, 0.15)
     Note over A,CR: Phase 2 — Plan
     A->>AR: Create implementation plan
     AR-->>A: Plan with acceptance criteria
@@ -115,15 +115,15 @@ sequenceDiagram
     CR-->>A: ACCEPT (or REVISE → loop)
     end
     
-    Note over A: Plan saved → .omg/plans/
+    Note over A: Plan saved to .omg/plans/
 
-    rect rgb(50, 40, 40)
+    rect rgba(240, 150, 80, 0.15)
     Note over A,EX: Phase 3 — Execute
     A->>EX: Implement (parallel tasks)
     EX-->>A: Code changes + test results
     end
 
-    rect rgb(40, 40, 50)
+    rect rgba(180, 100, 220, 0.15)
     Note over A,SR: Phase 4 — QA (parallel)
     A->>AR: Verify completeness
     A->>SR: Security audit
