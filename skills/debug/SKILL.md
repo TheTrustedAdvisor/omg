@@ -1,6 +1,6 @@
 ---
 name: debug
-description: "Structured debugging — reproduce, diagnose, fix with @debugger agent"
+description: "Structured debugging — reproduce, diagnose, fix with @omg:debugger agent"
 tags:
   - debugging
 ---
@@ -12,9 +12,9 @@ tags:
 
 ## Workflow
 
-1. Invoke @debugger with the error/symptom
+1. Invoke @omg:debugger with the error/symptom
 2. Debugger reproduces, investigates root cause, recommends minimal fix
-3. If fix needed, invoke @executor to apply it
+3. If fix needed, invoke @omg:executor to apply it
 4. Verify fix via `bash`
 
 ## Structured Handoff

@@ -33,13 +33,26 @@ Ultrawork is the parallelism layer. Ralph adds persistence and verification. Aut
 ### 1. Classify Tasks
 Identify which tasks can run in parallel vs which have dependencies.
 
-### 2. Route by Complexity
-- Simple lookups/definitions → invoke @executor (lightweight)
-- Standard implementation → invoke @executor (standard)
-- Complex analysis/refactoring → invoke @executor or @architect (thorough)
+### 2. Route by Complexity and Fire
 
-### 3. Fire Independent Tasks Simultaneously
-Launch all parallel-safe tasks at once via `task`.
+Route each subtask to the right agent/model, then fire all independent ones simultaneously:
+Launch all parallel-safe tasks at once. Example with 3 independent subtasks:
+
+```
+task(agent_type="omg:executor", model="claude-sonnet-4.6", mode="background",
+  prompt="[SUBTASK 1] {description}. Work ONLY on {files}.")
+
+task(agent_type="omg:executor", model="claude-sonnet-4.6", mode="background",
+  prompt="[SUBTASK 2] {description}. Work ONLY on {files}.")
+
+task(agent_type="omg:executor", model="claude-sonnet-4.6", mode="background",
+  prompt="[SUBTASK 3] {description}. Work ONLY on {files}.")
+```
+
+Route by complexity:
+- Simple lookups → `task(agent_type="omg:explore", model="claude-haiku-4.5", mode="background")`
+- Standard implementation → `task(agent_type="omg:executor", model="claude-sonnet-4.6", mode="background")`
+- Complex analysis → `task(agent_type="omg:architect", model="claude-opus-4.6", mode="background")`
 
 ### 4. Run Dependent Tasks Sequentially
 Wait for prerequisites before launching dependent work.

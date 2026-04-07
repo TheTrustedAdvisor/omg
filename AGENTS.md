@@ -151,6 +151,7 @@ All agents use `task()` with explicit `model` and `mode`:
 | Design UI | `task(agent_type="omg:designer", model="claude-sonnet-4.6", mode="background")` | medium |
 | Git operations | `task(agent_type="omg:git-master", model="claude-sonnet-4.6", mode="sync")` | medium |
 | Data analysis | `task(agent_type="omg:scientist", model="claude-sonnet-4.6", mode="sync")` | medium |
+| Interactive CLI testing | `task(agent_type="omg:qa-tester", model="claude-sonnet-4.6", mode="sync")` | medium |
 | Causal trace | `task(agent_type="omg:tracer", model="claude-sonnet-4.6", mode="sync")` | high |
 | External docs | `task(agent_type="omg:document-specialist", model="claude-sonnet-4.6", mode="background")` | medium |
 | Architecture | `task(agent_type="omg:architect", model="claude-opus-4.6", mode="sync")` | xhigh |

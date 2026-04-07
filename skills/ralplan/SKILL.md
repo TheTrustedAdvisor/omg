@@ -16,12 +16,27 @@ tags:
 
 Ralplan is consensus mode planning. It runs an iterative loop:
 
-1. **@planner** creates initial plan with:
+1. **@omg:planner** creates initial plan with:
    - Principles (3-5)
    - Decision Drivers (top 3)
    - Viable Options (>=2) with pros/cons
-2. **@architect** reviews for architectural soundness — must provide strongest counterargument against the favored option and meaningful trade-off tensions
-3. **@critic** evaluates quality — must verify testable acceptance criteria, fair alternative exploration, and concrete verification steps
+
+   ```
+   task(agent_type="omg:planner", prompt="Create plan with RALPLAN-DR summary: ...", model="claude-opus-4.6", mode="sync")
+   ```
+
+2. **@omg:architect** reviews for architectural soundness — must provide strongest counterargument against the favored option and meaningful trade-off tensions
+
+   ```
+   task(agent_type="omg:architect", prompt="Review plan: {plan}. Provide antithesis + trade-offs.", model="claude-opus-4.6", mode="sync")
+   ```
+
+3. **@omg:critic** evaluates quality — must verify testable acceptance criteria, fair alternative exploration, and concrete verification steps
+
+   ```
+   task(agent_type="omg:critic", prompt="Evaluate plan: {plan} + architect review: {review}", model="claude-opus-4.6", mode="sync")
+   ```
+
 4. **Re-review loop** (max 5 iterations) — if critic rejects, planner revises, back to architect
 5. **On approval** — final plan includes ADR: Decision, Drivers, Alternatives considered, Why chosen, Consequences, Follow-ups
 
@@ -94,3 +109,11 @@ The critic MUST verify:
 - **Consequences:** {what follows from this decision}
 - **Follow-ups:** {what needs to happen next}
 ```
+
+### Plan Persistence
+
+On approval, save the final plan for downstream consumption:
+
+1. Write plan to `.omg/plans/ralplan-{name}.md`
+2. Index via `store_memory` with key `omg:active-plan` → path to the plan file
+3. Write ADR to `.omg/research/adr-{name}.md`
