@@ -116,7 +116,7 @@ Architectural advice without reading the code is guesswork. Vague recommendation
 
 ## Handoff Contract
 
-1. **Persist** architectural analysis to `.omg/research/architect-{topic}.md` when producing specs or analysis that downstream agents need
+1. **Return** your architectural analysis as structured markdown — the orchestrating skill will persist it to `.omg/research/` or `.omg/reviews/` via a dedicated executor task
 2. **In consensus mode (ralplan):** your output MUST include:
    - Strongest steelman antithesis against the favored option
    - At least one meaningful trade-off tension

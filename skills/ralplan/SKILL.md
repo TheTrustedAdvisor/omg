@@ -6,123 +6,54 @@ tags:
   - consensus
 ---
 
-## When to Use
+## Instructions
 
-- User says "ralplan" or "consensus"
-- High-stakes decisions needing multi-perspective validation
-- Complex tasks where approach agreement matters before execution
+Execute these steps IN ORDER. Do NOT skip steps. Do NOT substitute different agents.
 
-## Mandatory Persistence
+### 1. INIT
 
-**You MUST persist artifacts at every step. This is not optional.**
-
-| When | Action | Path |
-|------|--------|------|
-| After EVERY architect+critic round | Append round log | `.omg/reviews/ralplan-{plan-name}-log.md` |
-| On approval | Write final plan | `.omg/plans/ralplan-{name}.md` |
-| On approval | Index plan | `store_memory` key `omg:active-plan` |
-| On approval | Write ADR | `.omg/research/adr-{name}.md` |
-
-## Workflow
-
-Ralplan is consensus mode planning. It runs an iterative loop:
-
-### Step 1: Planner creates initial plan
-
-```
-task(agent_type="omg:planner", prompt="Create plan with RALPLAN-DR summary: Principles (3-5), Decision Drivers (top 3), Viable Options (>=2) with pros/cons.", model="claude-opus-4.6", mode="sync")
+```bash
+mkdir -p .omg/reviews .omg/plans .omg/research
 ```
 
-### Step 2: Architect reviews
+### 2. PLANNER
 
 ```
-task(agent_type="omg:architect", prompt="Review plan: {plan}. Provide antithesis + trade-offs.", model="claude-opus-4.6", mode="sync")
+task(agent_type="omg:planner", model="claude-opus-4.6", mode="sync", prompt="Create a structured plan for: {user's topic}. Include: Principles (3-5), Decision Drivers (top 3), Viable Options (>=2) with pros/cons.")
 ```
 
-### Step 3: Critic evaluates
+### 3. ARCHITECT
 
 ```
-task(agent_type="omg:critic", prompt="Evaluate plan: {plan} + architect review: {review}", model="claude-opus-4.6", mode="sync")
+task(agent_type="omg:architect", model="claude-opus-4.6", mode="sync", prompt="Review this plan. Provide: (1) Antithesis against the favored option, (2) Trade-off tensions, (3) Synthesis if viable. Plan: {step 2 output}")
 ```
 
-### Step 4: PERSIST THE ROUND (mandatory)
+### 4. CRITIC
 
-**Immediately after Step 3**, append to `.omg/reviews/ralplan-{plan-name}-log.md`:
-
-```markdown
-## Round N
-### Architect Review
-[key findings, antithesis, trade-offs]
-### Critic Verdict: ACCEPT/REVISE/REJECT
-[critical findings, required changes]
+```
+task(agent_type="omg:critic", model="claude-opus-4.6", mode="sync", prompt="Evaluate this plan + review. Start with VERDICT: ACCEPT or REVISE or REJECT. Number each finding. Plan: {step 2 output}. Architect review: {step 3 output}")
 ```
 
-Use `edit` to create/append this file. Do NOT skip this step.
+### 5. SAVE ROUND
 
-### Step 5: Loop or finalize
-
-- **If REVISE/REJECT:** Planner reads the full log, revises plan addressing each CRITICAL finding by number. Back to Step 2. Max 5 iterations.
-- **If ACCEPT:** Write final plan to `.omg/plans/ralplan-{name}.md`, index via `store_memory` with key `omg:active-plan`, write ADR to `.omg/research/adr-{name}.md`.
-
-After approval, hand off to team or ralph for execution.
-
-## Detailed Consensus Protocol
-
-### RALPLAN-DR Summary (emitted by planner before review)
-
-```markdown
-### Principles (3-5)
-1. {principle with rationale}
-
-### Decision Drivers (top 3)
-1. {driver — the most important constraint or goal}
-
-### Viable Options (≥2)
-
-#### Option A: {name}
-- Pros: {bounded list, max 5}
-- Cons: {bounded list, max 5}
-
-#### Option B: {name}
-- Pros: ...
-- Cons: ...
-
-If only 1 viable option remains:
-> **Invalidation rationale:** Option B was rejected because {specific reason with evidence}.
+```
+task(agent_type="omg:executor", model="claude-haiku-4.5", mode="sync", prompt="Append to file .omg/reviews/ralplan-log.md. Create it if missing. Content to append: ## Round {N}\n### Architect\n{step 3 output}\n### Critic\n{step 4 output}\n---")
 ```
 
-### Architect Review Requirements
+### 6. DECIDE
 
-The architect MUST provide:
-1. **Antithesis** — strongest argument against the favored option
-2. **Trade-off tension** — a real tension that cannot be wished away
-3. **Synthesis** (if viable) — path that preserves strengths from competing options
+- If verdict is REVISE or REJECT AND round < 5: go to step 2 with feedback
+- If verdict is ACCEPT: go to step 7
 
-### Critic Gate Checks
+### 7. FINALIZE (only on ACCEPT)
 
-The critic MUST verify:
-- [ ] Principle-option consistency (options align with stated principles)
-- [ ] Alternatives fairly explored (not straw-manned)
-- [ ] Risk mitigations are concrete (not "we'll handle it later")
-- [ ] Acceptance criteria are testable
-- [ ] Verification steps are concrete
-
-### ADR Output (on approval)
-
-```markdown
-## ADR: {Decision Title}
-- **Decision:** {what was decided}
-- **Drivers:** {top 3 decision drivers}
-- **Alternatives considered:** {options that were evaluated}
-- **Why chosen:** {rationale with evidence}
-- **Consequences:** {what follows from this decision}
-- **Follow-ups:** {what needs to happen next}
+```
+task(agent_type="omg:executor", model="claude-haiku-4.5", mode="sync", prompt="Write the approved plan to .omg/plans/ralplan-result.md: {final plan}")
 ```
 
-### Plan Persistence
+Then call:
+```
+store_memory key="omg:active-plan" value='{"path":".omg/plans/ralplan-result.md"}'
+```
 
-On approval, save the final plan for downstream consumption:
-
-1. Write plan to `.omg/plans/ralplan-{name}.md`
-2. Index via `store_memory` with key `omg:active-plan` → path to the plan file
-3. Write ADR to `.omg/research/adr-{name}.md`
+Show the user the final plan and mention saved files.

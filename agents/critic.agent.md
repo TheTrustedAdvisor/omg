@@ -198,7 +198,7 @@ Compare actual findings against pre-commitment predictions. Synthesize into stru
 
 ## Handoff Contract
 
-1. **Persist** your verdict to `.omg/reviews/critic-{plan-name}-round{N}.md`
+1. **Return** your verdict as structured markdown starting with **VERDICT: ACCEPT/REVISE/REJECT** — the orchestrating skill will persist it to `.omg/reviews/` via a dedicated executor task
 2. **On REVISE/REJECT:** include in the file:
    - Numbered list of CRITICAL findings that MUST be addressed
    - Numbered list of MAJOR findings that SHOULD be addressed

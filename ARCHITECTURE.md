@@ -508,19 +508,42 @@ The pipeline + CI keeps the plugin in sync with OMC upstream automatically.
 
 Empirical findings from 662 tests (502 static, 110 behavioral, 29 E2E scenarios + 21 orchestration). These patterns are not theoretical — they were discovered through systematic testing against the real Copilot CLI.
 
-### 10.1 Instruction Placement Determines Compliance
+### 10.1 Skills Are Context, Not Programs
 
-**Finding:** LLM agents follow instructions at the **beginning** and **end** of a prompt far more reliably than instructions in the middle. This is the single most important architectural insight for prompt-based orchestration.
+**Finding:** This is the most critical architectural finding. Copilot CLI treats skills as **context enrichment**, not as **executable programs**. The agent reads a SKILL.md, understands the intent, and chooses its own approach — it does NOT follow the prescribed steps sequentially.
+
+**Evidence:** The `ralplan` skill was tested 5 times with progressively stricter instruction styles:
+
+| Attempt | Instruction Style | Agent's Behavior |
+|---------|-------------------|-----------------|
+| 1 | Detailed protocol in middle | Ignored workflow, used own agents |
+| 2 | Mandatory table at top | Same |
+| 3 | Bash commands for persistence | Executed init, skipped mid-workflow writes |
+| 4 | Dedicated persist task(executor) | Used planner+explore+analyst instead of planner+architect+critic |
+| 5 | Ultra-minimal (47 lines, "Do NOT skip. Do NOT substitute.") | Same — planner+explore+analyst |
+
+Across all 5 attempts, the agent **never** spawned `omg:architect` or `omg:critic` despite explicit instructions. It consistently chose `omg:explore` (5-6x) + `omg:analyst` instead.
+
+**Implication:** Skills should describe the **desired outcome**, not prescribe the exact agent chain. The agent will achieve the goal using whatever agents it considers appropriate. Design skills as intent declarations, not as programs.
+
+**What works vs. what doesn't:**
+
+| Works | Doesn't Work |
+|-------|-------------|
+| Describing the goal and acceptance criteria | Prescribing exact task() call sequences |
+| Naming the skill's purpose and constraints | Expecting step-by-step sequential execution |
+| Agent identity in `.agent.md` (strongly followed) | Multi-step workflows in SKILL.md |
+| AGENTS.md global rules (always loaded) | Mid-workflow administrative side-effects |
+
+### 10.1b Instruction Placement Still Matters (Within What's Followed)
+
+For instructions that ARE followed (agent identity, tool usage, output format), placement matters:
 
 | Position | Compliance Rate | Use For |
 |----------|----------------|---------|
 | First 20% of prompt | ~95% | Core identity, mandatory rules, tool constraints |
 | Middle 40-60% | ~60% | Reference material, detailed protocols |
-| Last 20% of prompt | ~85% | Checklists, mandatory output format, persistence |
-
-**Implication:** Mandatory behaviors (like persistence) must be either at the very top of a SKILL.md or enforced via a checklist at the bottom. Placing them between protocol details causes non-deterministic compliance.
-
-**Evidence:** `ralplan` review log persistence was placed in the middle of the skill — compliance was 0% across 3 test runs. Moving it to the top and adding a mandatory checklist improved compliance but did not guarantee it (Issue #36).
+| Last 20% of prompt | ~85% | Checklists, mandatory output format |
 
 ### 10.2 AGENTS.md is the Most Reliable Instruction Surface
 
