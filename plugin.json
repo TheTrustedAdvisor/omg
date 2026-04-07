@@ -1,0 +1,13 @@
+{
+  "name": "omg",
+  "description": "OMC for GitHub Copilot — 19 specialized agents, intelligent model selection, multi-agent orchestration",
+  "version": "0.1.0",
+  "author": {
+    "name": "Matthias Falland"
+  },
+  "license": "MIT",
+  "keywords": ["copilot", "agents", "skills", "omc", "orchestration"],
+  "agents": "agents/",
+  "skills": ["skills/"],
+  "hooks": "hooks.json"
+}

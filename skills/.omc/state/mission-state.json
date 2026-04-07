@@ -1,0 +1,71 @@
+{
+  "updatedAt": "2026-04-06T19:58:35.079Z",
+  "missions": [
+    {
+      "id": "session:e0ff4e44-4d20-4ccb-9b38-8143b06d8b2b:none",
+      "source": "session",
+      "name": "none",
+      "objective": "Session mission",
+      "createdAt": "2026-04-06T19:58:18.872Z",
+      "updatedAt": "2026-04-06T19:58:35.079Z",
+      "status": "running",
+      "workerCount": 2,
+      "taskCounts": {
+        "total": 2,
+        "pending": 0,
+        "blocked": 0,
+        "inProgress": 1,
+        "completed": 1,
+        "failed": 0
+      },
+      "agents": [
+        {
+          "name": "autonomous-work:af18acb",
+          "role": "autonomous-work",
+          "ownership": "af18acb340b96b403",
+          "status": "done",
+          "currentStep": null,
+          "latestUpdate": "completed",
+          "completedSummary": null,
+          "updatedAt": "2026-04-06T19:58:34.907Z"
+        },
+        {
+          "name": "autonomous-work:a948e94",
+          "role": "autonomous-work",
+          "ownership": "a948e94f72dca1d51",
+          "status": "running",
+          "currentStep": null,
+          "latestUpdate": null,
+          "completedSummary": null,
+          "updatedAt": "2026-04-06T19:58:35.079Z"
+        }
+      ],
+      "timeline": [
+        {
+          "id": "session-start:af18acb340b96b403:2026-04-06T19:58:18.872Z",
+          "at": "2026-04-06T19:58:18.872Z",
+          "kind": "update",
+          "agent": "autonomous-work:af18acb",
+          "detail": "started autonomous-work:af18acb",
+          "sourceKey": "session-start:af18acb340b96b403"
+        },
+        {
+          "id": "session-stop:af18acb340b96b403:2026-04-06T19:58:34.907Z",
+          "at": "2026-04-06T19:58:34.907Z",
+          "kind": "completion",
+          "agent": "autonomous-work:af18acb",
+          "detail": "completed",
+          "sourceKey": "session-stop:af18acb340b96b403"
+        },
+        {
+          "id": "session-start:a948e94f72dca1d51:2026-04-06T19:58:35.079Z",
+          "at": "2026-04-06T19:58:35.079Z",
+          "kind": "update",
+          "agent": "autonomous-work:a948e94",
+          "detail": "started autonomous-work:a948e94",
+          "sourceKey": "session-start:a948e94f72dca1d51"
+        }
+      ]
+    }
+  ]
+}

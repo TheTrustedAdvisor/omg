@@ -1,0 +1,7 @@
+{
+  "tool_name": "Bash",
+  "tool_input_preview": "{\"command\":\"grep -l \\\"Delegation Routing\\\" plugin/agents/*.agent.md | wc -l && echo \\\"agents have routing table\\\" && grep -c 'model=\\\"claude' plugin/agents/architect.agent.md\",\"description\":\"Verify ro...",
+  "error": "Exit code 2\n(eval):1: no matches found: plugin/agents/*.agent.md\n0\nagents have routing table\ngrep: plugin/agents/architect.agent.md: No such file or directory\n[rerun: b207]",
+  "timestamp": "2026-04-06T21:44:11.576Z",
+  "retry_count": 1
+}

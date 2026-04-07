@@ -1,0 +1,4 @@
+{"t":0,"agent":"a2e170e","agent_type":"autonomous-work","event":"agent_stop","success":true}
+{"t":0,"agent":"af18acb","agent_type":"autonomous-work","event":"agent_start","parent_mode":"none"}
+{"t":0,"agent":"af18acb","agent_type":"autonomous-work","event":"agent_stop","success":true,"duration_ms":16035}
+{"t":0,"agent":"a948e94","agent_type":"autonomous-work","event":"agent_start","parent_mode":"none"}
