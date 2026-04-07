@@ -1,6 +1,6 @@
 # omg — Multi-Agent Orchestration for GitHub Copilot
 
-**19 specialized AI agents. 36 workflow skills. One plugin.**
+**28 specialized AI agents. 37 workflow skills. One plugin.**
 
 omg turns GitHub Copilot CLI into a multi-agent development platform. Instead of one AI assistant doing everything, omg gives you a team of specialists — an architect who analyzes code, a debugger who traces root causes, a critic who reviews plans, an executor who implements changes — all coordinating autonomously through structured workflows.
 
@@ -21,7 +21,7 @@ One command:
 copilot plugin install TheTrustedAdvisor/omg
 ```
 
-That's it. 19 agents + 37 skills, ready to use.
+That's it. 28 agents + 37 skills, ready to use.
 
 <details>
 <summary>Alternative install methods</summary>
@@ -214,7 +214,23 @@ Features that only work on Copilot, not on other AI coding tools:
 | **GitHub integration** | Native MCP access to issues, PRs, code search |
 | **Reasoning control** | `--effort low/xhigh` per task for cost optimization |
 
-## The 19 Agents
+## The 28 Agents
+
+### 9 Orchestrators (decide HOW to execute)
+
+| Agent | Specialty | When it's called |
+|-------|----------|-----------------|
+| **autopilot** | Full lifecycle: idea → working code | "autopilot", "build me", "handle it all" |
+| **ralph** | Persistence loop until criteria pass | "ralph", "don't stop", "must complete" |
+| **team** | N parallel workers on independent tasks | "team 3", "assemble a team" |
+| **ralplan** | Consensus: planner → architect → critic | "ralplan", "consensus" |
+| **ultrawork** | Fire parallel tasks simultaneously | "ultrawork", "ulw" |
+| **research-to-pr** | Investigate → cloud agent → auto PR | "research and fix", "investigate and PR" |
+| **sciomc** | Staged parallel research with scientists | "sciomc", "research" |
+| **self-improve** | Benchmark, tournament-select best approach | "self-improve", "optimize" |
+| **deep-dive** | Trace root cause → crystallize into spec | "deep dive", "investigate deeply" |
+
+### 19 Specialists (know WHAT to do)
 
 | Agent | Specialty | When it's called |
 |-------|----------|-----------------|

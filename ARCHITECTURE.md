@@ -14,7 +14,7 @@ The pipeline compiles OMC source material into Copilot-native format.
 ```mermaid
 graph LR
     subgraph Sources
-        OMC[OMC Repo<br/>19 agents, 36 skills]
+        OMC[OMC Repo<br/>28 agents, 37 skills]
         MS[Microsoft Skills<br/>6 repos]
         AC[awesome-copilot<br/>Community index]
     end
@@ -30,7 +30,7 @@ graph LR
 
     subgraph Output["omg Plugin (Product)"]
         PJ[plugin.json]
-        AG[19 agents/*.agent.md]
+        AG[28 agents/*.agent.md]
         SK[28 skills/*/SKILL.md]
         HK[hooks.json]
         LM[LIMITATIONS.md]
@@ -46,7 +46,7 @@ graph LR
 
     subgraph User["User's Copilot"]
         INST[copilot plugin install ./plugin]
-        INST --> USE[19 agents + 28 skills active]
+        INST --> USE[28 agents + 37 skills active]
     end
 
     Output --> INST
@@ -60,7 +60,7 @@ plugin/
 ├── ARCHITECTURE.md                      ← This file
 ├── LIMITATIONS.md                       ← Known gaps + "improve when" triggers
 ├── hooks.json                           ← Lifecycle hooks (currently empty)
-├── agents/                              ← 19 specialized agents
+├── agents/                              ← 28 agents (19 specialists + 9 orchestrators)
 │   ├── executor.agent.md                ← sonnet, FULL tools
 │   ├── debugger.agent.md                ← sonnet, FULL tools
 │   ├── verifier.agent.md                ← sonnet, verification
@@ -453,7 +453,7 @@ graph LR
 
 | OMC Feature | omg Implementation | Fidelity |
 |-------------|-------------------|----------|
-| 19 specialized agents | .agent.md files with Copilot-native tools | **Full** |
+| 28 agents (19 specialists + 9 orchestrators) | .agent.md files with Copilot-native tools | **Full** |
 | 28 portable skills | SKILL.md files with auto-discovery | **Full** |
 | Model routing | `task(model=...)` per subagent | **Full** (via delegation) |
 | Agent delegation | `task(agent_type="omg:X")` | **Full** |
