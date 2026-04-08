@@ -72,3 +72,17 @@ If invoked with "review" or "scan": analyze but do NOT make changes. Report find
 - [ ] Build passes after cleanup
 - [ ] Tests pass after cleanup
 - [ ] Report lists every change with file:line
+
+## Trigger Keywords
+
+clean slop, deslop, anti-slop, remove AI patterns
+
+## Example
+
+```bash
+copilot -i "clean AI slop in src/"
+```
+
+## Quality Contract
+
+- Each change preserves functionality, build+tests pass after cleanup

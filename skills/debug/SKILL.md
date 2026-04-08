@@ -23,3 +23,17 @@ When invoking @omg:executor for the fix:
 1. Persist diagnosis to `.omg/research/debug-{issue}.md`
 2. Include in executor prompt ONLY: (1) exact file:line from Root Cause, (2) specific Fix, (3) Verification command
 3. If Similar Issues found, create one additional task per location
+
+## Trigger Keywords
+
+debug, error, failure, broken
+
+## Example
+
+```bash
+copilot -i "debug: tests failing in src/pipeline/"
+```
+
+## Quality Contract
+
+- Root cause identified, minimal fix applied, verified

@@ -40,3 +40,13 @@ Trace findings flow into interview as injected context — the user doesn't repe
 - Clear, specific request → execute directly
 - Only want investigation → use trace skill
 - Already have a spec → use ralph or autopilot
+
+## Example
+
+```bash
+copilot -i "deep-dive: why is the build slow"
+```
+
+## Quality Contract
+
+- Trace first, then crystallize into actionable spec

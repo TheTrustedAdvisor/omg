@@ -42,3 +42,17 @@ Before starting work, always:
 2. **Check `.omg/` directories** via `glob` for relevant files
 3. **Read the most recent relevant file** to get full context
 4. **If nothing found:** proceed with the task prompt as sole context
+
+## Trigger Keywords
+
+handoff protocol, persistence protocol
+
+## Example
+
+```bash
+copilot -i "handoff-protocol"
+```
+
+## Quality Contract
+
+- Documents all .omg/ directories, store_memory keys, and handoff patterns

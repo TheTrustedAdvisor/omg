@@ -84,3 +84,11 @@ Report: "New skill saved. Reinstall plugin to activate: `copilot plugin install 
 - [ ] Agent routing specified with model hints
 - [ ] Examples included from actual conversation
 - [ ] SKILL.md saved with proper frontmatter
+
+## Trigger Keywords
+
+learn this, save as skill, remember how
+
+## Quality Contract
+
+- Generates reusable SKILL.md from conversation patterns

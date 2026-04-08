@@ -146,3 +146,17 @@ Key enhanced workflows:
 - [ ] Installations verified
 - [ ] Results saved to `.omg/research/installed-plugins.json`
 - [ ] `store_memory` indexed
+
+## Trigger Keywords
+
+microsoft skills, ms-discover, add fabric
+
+## Example
+
+```bash
+copilot -i "ms-discover"
+```
+
+## Quality Contract
+
+- Detects installed plugins, offers installation

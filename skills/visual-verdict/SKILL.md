@@ -82,3 +82,17 @@ Re-run visual verdict after fixes to confirm.
 - [ ] Each deviation categorized (MATCH/MINOR/MAJOR/MISSING)
 - [ ] Fix list with specific CSS/code changes
 - [ ] Verdict is clear (PASS/NEEDS WORK)
+
+## Trigger Keywords
+
+visual verdict, compare screenshots, match design
+
+## Example
+
+```bash
+copilot -i "visual-verdict: compare these screenshots"
+```
+
+## Quality Contract
+
+- 6-dimension scoring (layout, typography, color, spacing, interactive, responsive)

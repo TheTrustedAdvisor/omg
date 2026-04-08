@@ -24,3 +24,17 @@ tags:
    - Checklist
 4. Save to `plugin/skills/{name}/SKILL.md` via `edit`
 5. Report: reinstall plugin to activate the new skill
+
+## Trigger Keywords
+
+skillify, make this a skill
+
+## Example
+
+```bash
+copilot -i "skillify: create a skill from the test workflow"
+```
+
+## Quality Contract
+
+- Generates valid SKILL.md with frontmatter

@@ -21,3 +21,17 @@ tags:
 ## Notes
 
 Copilot CLI's `store_memory` tool provides cross-session persistence. Saved items can be recalled in future sessions automatically.
+
+## Trigger Keywords
+
+remember, save for later, note this
+
+## Example
+
+```bash
+copilot -i "remember: we use vitest not jest"
+```
+
+## Quality Contract
+
+- Persisted via store_memory for cross-session recall

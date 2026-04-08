@@ -57,3 +57,17 @@ When invoked in automation or CI, use `--no-ask-user` to prevent the agent from 
 copilot -p "..." --autopilot --no-ask-user --yolo -s
 ```
 This ensures fully autonomous execution without human intervention.
+
+## Trigger Keywords
+
+ultraqa, QA cycling, quality loop
+
+## Quality Contract
+
+- Cycle: run, check, diagnose, fix, repeat until quality met
+
+## Example
+
+```bash
+copilot -i "ultraqa: improve test coverage in src/"
+```

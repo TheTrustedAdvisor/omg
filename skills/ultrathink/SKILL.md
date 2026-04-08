@@ -24,3 +24,17 @@ tags:
 
 - ultrathink + deep-dive: for problems needing both deep reasoning AND requirements crystallization
 - ultrathink + ralplan: for architectural decisions needing consensus
+
+## Trigger Keywords
+
+ultrathink, deep reasoning, think deeply
+
+## Example
+
+```bash
+copilot -i "ultrathink: should we use microservices or monolith?"
+```
+
+## Quality Contract
+
+- Opus-class deep analysis with trade-offs

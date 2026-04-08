@@ -114,3 +114,17 @@ CONFIG=$(cat .omg/research/notifications-config.json)
 - [ ] Config saved to `.omg/research/notifications-config.json`
 - [ ] Test notification sent successfully
 - [ ] Indexed in `store_memory`
+
+## Trigger Keywords
+
+configure notifications, setup telegram, setup discord
+
+## Example
+
+```bash
+copilot -i "configure notifications"
+```
+
+## Quality Contract
+
+- Secrets via env vars only, never stored in files

@@ -25,3 +25,17 @@ tags:
 ## Prerequisites
 
 Requires Codex CLI and Gemini CLI for full tri-model. Falls back to available models if one is missing.
+
+## Trigger Keywords
+
+ccg, tri-model, three perspectives
+
+## Example
+
+```bash
+copilot -i "ccg: best approach for caching"
+```
+
+## Quality Contract
+
+- Claude + Codex + Gemini perspectives synthesized

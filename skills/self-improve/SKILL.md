@@ -32,3 +32,13 @@ self-improve, autonomous optimization, improve performance, optimize
 - Single targeted fix → use @omg:executor
 - Need to understand before changing → use deep-dive or trace
 - No benchmark/metric available → define one first
+
+## Example
+
+```bash
+copilot -i "self-improve: optimize pipeline performance"
+```
+
+## Quality Contract
+
+- Benchmark before and after, tournament-select best approach

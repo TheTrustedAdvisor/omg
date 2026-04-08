@@ -114,3 +114,17 @@ Next: git push origin main --tags
 - [ ] Changelog generated
 - [ ] Commit + tag created
 - [ ] User informed (push is manual)
+
+## Trigger Keywords
+
+release, version bump, publish
+
+## Example
+
+```bash
+copilot -i "release: prepare v1.0.0"
+```
+
+## Quality Contract
+
+- Pre-flight checks, quality gate, changelog generated, user decides push

@@ -93,3 +93,17 @@ After trace:
 - [ ] Critical Unknown named
 - [ ] Discriminating Probe recommended
 - [ ] Report saved to `.omg/research/trace-{slug}.md`
+
+## Trigger Keywords
+
+trace, root cause, why did this happen
+
+## Example
+
+```bash
+copilot -i "trace: why did the deploy fail?"
+```
+
+## Quality Contract
+
+- Competing hypotheses ranked by evidence, no fix applied

@@ -131,3 +131,17 @@ Remind the user:
 - Wait for user to try each command before explaining
 - If user says "skip" — jump to the next step
 - If user says "done" — end with the quick reference links
+
+## Trigger Keywords
+
+tutorial, show me how, getting started
+
+## Example
+
+```bash
+copilot -i "tutorial"
+```
+
+## Quality Contract
+
+- 5-step progressive walkthrough, interactive, skip/done supported

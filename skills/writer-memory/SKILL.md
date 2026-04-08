@@ -137,3 +137,17 @@ Each character has an arc with phases:
 ```
 
 When checking consistency, verify new actions match current arc phase.
+
+## Trigger Keywords
+
+writer memory, add character, track story
+
+## Example
+
+```bash
+copilot -i "writer-memory: add character Alice"
+```
+
+## Quality Contract
+
+- Tracks characters, relationships, scenes, themes, timeline

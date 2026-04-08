@@ -249,3 +249,11 @@ or is 10K an assumption, not a requirement?"
 - [ ] Spec saved to `.omg/research/spec-{slug}.md`
 - [ ] Spec indexed via `store_memory` key `omg:active-spec`
 - [ ] Execution bridged via skill, not direct implementation
+
+## Trigger Keywords
+
+deep interview, interview me, socratic
+
+## Quality Contract
+
+- Ambiguity scoring, spec persisted when clarity sufficient

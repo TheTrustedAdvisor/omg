@@ -118,3 +118,17 @@ git stash pop stash@{N}
 | 1 | add-validation | feature/add-validation | issue #42 | 2026-04-06 | No |
 | 2 | fix-auth-bug | fix/auth-bug | issue #15 | 2026-04-05 | Yes (2 files) |
 ```
+
+## Trigger Keywords
+
+new session, start issue, work on feature
+
+## Example
+
+```bash
+copilot -i "new session for issue 42"
+```
+
+## Quality Contract
+
+- Branch isolation, session tracking

@@ -16,3 +16,17 @@ tags:
 1. Invoke @verifier with the acceptance criteria
 2. Verifier runs tests, build, checks each criterion
 3. Returns PASS/FAIL verdict with evidence for every criterion
+
+## Trigger Keywords
+
+verify, verify work, check completion
+
+## Example
+
+```bash
+copilot -i "verify that all tests pass"
+```
+
+## Quality Contract
+
+- PASS/FAIL verdict with fresh evidence, no assumptions

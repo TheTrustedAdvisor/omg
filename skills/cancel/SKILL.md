@@ -94,3 +94,17 @@ Modes check `.omg/qa-logs/` on startup:
 - [ ] In-flight agents given time to complete
 - [ ] Clean shutdown reported
 - [ ] State preserved for resume
+
+## Trigger Keywords
+
+cancel, stop, abort, cancelomc
+
+## Example
+
+```bash
+copilot -i "cancelomc"
+```
+
+## Quality Contract
+
+- Clean shutdown, preserves state

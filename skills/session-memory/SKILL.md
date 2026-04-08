@@ -100,3 +100,11 @@ Skills automatically save key context:
 - [ ] Context saved to appropriate `.omg/research/` file
 - [ ] `store_memory` indexed for quick discovery
 - [ ] Recall works in new session (verified)
+
+## Trigger Keywords
+
+session memory, save context, what do you remember
+
+## Quality Contract
+
+- Cross-session persistence via store_memory

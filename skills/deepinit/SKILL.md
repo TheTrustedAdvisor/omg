@@ -50,3 +50,17 @@ Save all to `.omg/research/deepinit/`:
 - [ ] Entry points listed
 - [ ] Conventions extracted from existing code
 - [ ] Docs saved to `.omg/research/deepinit/`
+
+## Trigger Keywords
+
+deepinit, codebase docs, initialize docs
+
+## Example
+
+```bash
+copilot -i "deepinit"
+```
+
+## Quality Contract
+
+- Generates ARCHITECTURE.md, CONVENTIONS.md, GETTING-STARTED.md

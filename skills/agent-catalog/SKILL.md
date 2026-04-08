@@ -147,3 +147,11 @@ task(agent_type="omg:executor", prompt="add input validation to createUser()", m
 # Verification
 task(agent_type="omg:verifier", prompt="verify createUser validation works", model="claude-sonnet-4.6", mode="sync")
 ```
+
+## Trigger Keywords
+
+agent catalog, list agents, which agent
+
+## Quality Contract
+
+- Lists all 25 agents with routing guidance and delegation examples

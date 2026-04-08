@@ -72,3 +72,17 @@ Index via `store_memory` key `omg:research-{topic}`.
 - [ ] Official docs preferred
 - [ ] Version compatibility noted
 - [ ] Research saved to `.omg/research/`
+
+## Trigger Keywords
+
+external context, look up docs, what does API say
+
+## Example
+
+```bash
+copilot -i "external-context: vitest snapshot testing API"
+```
+
+## Quality Contract
+
+- Sources cited with URLs, official docs preferred

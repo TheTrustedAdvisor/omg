@@ -45,3 +45,9 @@ Team checks for existing plans before decomposing:
 - Parallel, not sequential — never serialize independent work
 - Combined verification after all workers complete
 - Progress tracked in `.omg/qa-logs/team-log.md`
+
+## Example
+
+```bash
+copilot -i "team 3: fix TypeScript errors across src/"
+```

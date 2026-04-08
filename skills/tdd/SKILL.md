@@ -48,3 +48,17 @@ tags:
 - [ ] Tests run after every change (red → green → refactor)
 - [ ] Each cycle addresses exactly one behavior
 - [ ] Refactor phase completed before moving on
+
+## Trigger Keywords
+
+tdd, test-driven, red green refactor
+
+## Example
+
+```bash
+copilot -i "tdd: add email validation function"
+```
+
+## Quality Contract
+
+- Failing test FIRST, then minimal code, then refactor

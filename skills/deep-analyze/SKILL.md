@@ -31,3 +31,17 @@ tags:
 ## Output
 
 Structured multi-perspective report with evidence, trade-offs, and prioritized action items.
+
+## Trigger Keywords
+
+deep-analyze, deep analyze, thorough analysis
+
+## Example
+
+```bash
+copilot -i "deep-analyze: the auth subsystem"
+```
+
+## Quality Contract
+
+- Multi-angle parallel investigation, findings persisted to .omg/research/

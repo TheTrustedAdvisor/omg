@@ -27,3 +27,17 @@ Requires the target CLI to be installed:
 - Gemini: `npm install -g @google/gemini-cli`
 
 If the target CLI is not available, note the limitation and answer with available resources.
+
+## Trigger Keywords
+
+ask claude, ask codex, ask gemini
+
+## Example
+
+```bash
+copilot -i "ask claude: what is the IR pipeline pattern?"
+```
+
+## Quality Contract
+
+- Multi-model perspective, sources cited

@@ -22,3 +22,13 @@ ralplan, consensus, consensus planning, multi-perspective plan
 - Final plan: `.omg/plans/`
 - ADR: `.omg/research/adr-{name}.md`
 - Index: `store_memory` key `omg:active-plan`
+
+## Example
+
+```bash
+copilot -i "ralplan: design error recovery strategy"
+```
+
+## Quality Contract
+
+- Multi-perspective: planner + architect + critic iterate

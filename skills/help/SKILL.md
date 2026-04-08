@@ -79,3 +79,17 @@ Display this quick reference:
 - "about" — what is omg, version, architecture
 - "agent-catalog" — full agent directory with model/effort routing
 - "handoff-protocol" — how agents share data via .omg/ directories
+
+## Trigger Keywords
+
+help, omg help, what can you do
+
+## Example
+
+```bash
+copilot -i "help"
+```
+
+## Quality Contract
+
+- Lists all 25 agents, 42 skills, and top 5 workflows

@@ -32,3 +32,9 @@ Ralph checks for existing plans before decomposing:
 ## Story State Persistence
 
 Progress tracked in `.omg/qa-logs/ralph-progress.md` for cross-session resume.
+
+## Example
+
+```bash
+copilot -i "ralph: fix all lint errors"
+```

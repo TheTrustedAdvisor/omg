@@ -39,3 +39,13 @@ sciomc AUTO: <goal>    (fully autonomous, no checkpoints)
 - Single quick lookup → use @omg:explore
 - External documentation → use external-context skill
 - Root cause analysis → use trace skill
+
+## Example
+
+```bash
+copilot -i "sciomc: analyze test coverage patterns"
+```
+
+## Quality Contract
+
+- Staged parallel investigation, cross-validated findings

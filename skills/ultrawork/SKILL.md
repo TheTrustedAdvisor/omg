@@ -15,3 +15,13 @@ This skill activates the **team agent** for parallel task execution.
 ## Trigger Keywords
 
 ultrawork, ulw, parallel execution, fire simultaneously
+
+## Example
+
+```bash
+copilot -i "ulw: search for all TODO comments"
+```
+
+## Quality Contract
+
+- Alias for team agent parallel mode

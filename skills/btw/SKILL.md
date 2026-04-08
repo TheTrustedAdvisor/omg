@@ -44,3 +44,11 @@ Wörter nach Häufigkeit im Dokument vs. Seltenheit im Gesamtkorpus.
 Häufige aber seltene Wörter bekommen hohe Scores.
 (btw beantwortet — weiter mit deiner Aufgabe)
 ```
+
+## Trigger Keywords
+
+btw, by the way, quick question, nebenbei
+
+## Quality Contract
+
+- Max 5 sentences, no tools, no task derailment

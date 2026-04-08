@@ -151,3 +151,17 @@ When presenting design choices, chunk them:
 - [ ] User confirmed the plan
 - [ ] Plan saved to `.omg/plans/` and indexed via `store_memory`
 - [ ] In consensus: ADR included, review log maintained
+
+## Trigger Keywords
+
+plan, how should we, strategy, design
+
+## Example
+
+```bash
+copilot -i "plan: add input validation to CLI commands"
+```
+
+## Quality Contract
+
+- 3-6 steps with testable acceptance criteria, analyst pre-flight

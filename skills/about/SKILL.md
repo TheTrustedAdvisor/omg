@@ -59,3 +59,17 @@ License:        MIT
 - "help" — see what you can do
 - "tutorial" — interactive walkthrough
 - "agent-catalog" — full agent directory with routing
+
+## Trigger Keywords
+
+about omg, what is omg, version
+
+## Example
+
+```bash
+copilot -i "about omg"
+```
+
+## Quality Contract
+
+- Shows version, agent count, architecture, author info

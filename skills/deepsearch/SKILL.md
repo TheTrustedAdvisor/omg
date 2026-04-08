@@ -23,3 +23,17 @@ tags:
 ## Output
 
 Follows @omg:explore output format: Findings, Impact, Relationships, Recommendation, Next Steps.
+
+## Trigger Keywords
+
+deepsearch, exhaustive search, find everything
+
+## Example
+
+```bash
+copilot -i "deepsearch: find all error handling patterns"
+```
+
+## Quality Contract
+
+- 5+ search angles, cross-validated, absolute paths

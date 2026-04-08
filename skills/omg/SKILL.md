@@ -44,3 +44,17 @@ Present combined findings.
 The user may speak any language. Translate intent to English keywords internally, then route.
 
 Example: "omg Sicherheitsüberprüfung" → intent: "security review" → @omg:security-reviewer
+
+## Trigger Keywords
+
+omg, omg help, omg review
+
+## Example
+
+```bash
+copilot -i "omg review this code for security"
+```
+
+## Quality Contract
+
+- Routes to the right agent based on intent, any language

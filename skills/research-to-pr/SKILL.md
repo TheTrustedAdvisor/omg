@@ -38,3 +38,13 @@ research and fix, investigate and PR, find bug and send PR, research-to-pr
 - Quick fix → use @omg:executor
 - Need user input during implementation → use ralph
 - Want to review code before PR → use plan + executor locally
+
+## Example
+
+```bash
+copilot -i "research-to-pr: fix the auth token expiry bug"
+```
+
+## Quality Contract
+
+- Research locally, /delegate creates PR automatically
