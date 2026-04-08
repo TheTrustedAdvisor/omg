@@ -19,13 +19,13 @@ Display the following information:
 ║  omg — Multi-Agent Orchestration for GitHub Copilot   ║
 ╚═══════════════════════════════════════════════════════╝
 
-Version:      0.3.0
-Agents:       28 (19 specialists + 9 orchestrators)
-Skills:       40 (capability triggers + discovery)
+Version:      0.4.11
+Agents:       25 (19 specialists + 6 orchestrators)
+Skills:       41 (capability triggers + discovery)
 Architecture: Agents orchestrate, skills provide capabilities
 
-Orchestrators:  autopilot · ralph · team · ralplan · ultrawork
-                research-to-pr · sciomc · self-improve · deep-dive
+Orchestrators:  autopilot · team · research-to-pr
+                sciomc · self-improve · deep-dive
 
 Specialists:    architect · analyst · planner · critic · executor
                 debugger · verifier · code-reviewer · security-reviewer
