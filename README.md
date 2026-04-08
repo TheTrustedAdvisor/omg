@@ -14,6 +14,20 @@ omg turns GitHub Copilot CLI into a multi-agent development platform. Instead of
 | Forget context between sessions | Persistent memory across sessions |
 | Single model for everything | Right model per task (haiku for speed, opus for depth) |
 
+## See It In Action
+
+### About omg
+![omg about](assets/demo-about.gif)
+
+### Quick Side-Question (btw)
+![btw side-question](assets/demo-btw.gif)
+
+### Codebase Exploration
+![explore agent](assets/demo-explore.gif)
+
+### Multi-Language Routing
+![multi-language](assets/demo-multilang.gif)
+
 ## Install
 
 One command:
