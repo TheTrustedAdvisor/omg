@@ -226,3 +226,33 @@ All agents use `task()` with explicit `model` and `mode`:
 - Use `mode="background"` for work that doesn't block your next step
 - Use `mode="sync"` for reviews and analysis you need before proceeding
 - For 3+ independent tasks: spawn multiple `task(mode="background")` simultaneously
+
+### Cloud Delegation (`/delegate`)
+
+**Use `/delegate` instead of local implementation when:**
+
+| Condition | Why /delegate |
+|-----------|---------------|
+| Changes should become a PR | Cloud agent creates draft PR automatically |
+| Task is large (10+ files) | Cloud agent has no timeout, works in background |
+| User wants to keep working locally | `/delegate` frees the terminal immediately |
+| Task needs CI verification | Cloud agent runs on GitHub infrastructure |
+
+**Syntax:**
+```
+/delegate implement the fix and open a PR
+```
+Or shorthand: `& implement the fix and open a PR`
+
+**How it works:**
+1. Commits unstaged changes to a new branch (checkpoint)
+2. Cloud agent inherits your full conversation context
+3. Cloud agent works in background → draft PR
+4. You get a link to the PR + agent session
+
+**When NOT to delegate:**
+- Quick local fix (< 3 files) — faster to do locally
+- Exploratory work — you want to guide it interactively
+- Repo not pushed — cloud agent needs the remote
+
+**Any agent can suggest `/delegate`.** When the task is complete and the user might want a PR, offer: "Want me to `/delegate` this to create a PR?"
