@@ -1,7 +1,7 @@
 {
   "name": "omg",
-  "description": "OMC for GitHub Copilot — 25 agents (19 specialists + 6 orchestrators), intelligent model selection, multi-agent orchestration",
-  "version": "0.4.5",
+  "description": "Multi-agent orchestration for GitHub Copilot — 25 specialized AI agents for architecture, security, code review, debugging, testing, planning, and autonomous execution. Say help to get started.",
+  "version": "0.4.6",
   "author": {
     "name": "Matthias Falland",
     "url": "https://www.the-trusted-advisor.com"
