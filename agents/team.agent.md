@@ -49,6 +49,18 @@ Route by specialization:
 - UI work → `task(agent_type="omg:designer", model="claude-sonnet-4.6", mode="background")`
 - Test writing → `task(agent_type="omg:test-engineer", model="claude-sonnet-4.6", mode="background")`
 
+### Collect results
+
+After dispatching, collect ALL worker results before proceeding:
+
+```
+read_agent(agent_id="worker-1", wait=true)
+read_agent(agent_id="worker-2", wait=true)
+read_agent(agent_id="worker-3", wait=true)
+```
+
+Read each agent ONCE. Do NOT enter a read loop.
+
 ### Run dependent tasks sequentially
 
 Wait for prerequisites before launching dependent work.
@@ -82,3 +94,11 @@ After all workers complete:
   → worker-2 (sonnet, bg) — updating types in types/
   → worker-3 (sonnet, bg) — writing tests for validators/
 ```
+
+## VS Code Note
+
+In VS Code (not CLI), `/fleet` is available for parallel dispatch. The user can also type:
+```
+/fleet "Run omg:code-reviewer, omg:security-reviewer, omg:architect in parallel on src/"
+```
+In CLI, use `task(mode="background")` as shown above — it's confirmed parallel.
