@@ -69,6 +69,14 @@ copilot -i "research-to-pr: fix the auth token expiry bug"
 
 Copilot picks the right agents and skills automatically.
 
+**Works in any language** — speak German, French, Japanese, or any language. omg translates your intent and responds in your language:
+
+```bash
+copilot -i "omg prüfe die Sicherheit dieses Projekts"     # German → security review
+copilot -i "omg vérifie la sécurité de ce projet"          # French → security audit
+copilot -i "omg このプロジェクトのセキュリティを確認して"        # Japanese → security check
+```
+
 ### Workflows at a Glance
 
 | Say this | What happens |
