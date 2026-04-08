@@ -108,6 +108,12 @@ Guide the user through 5 progressive steps. After each step, explain what happen
 > | `tdd: add email validation` | Strict red-green-refactor discipline |
 >
 > For the full reference: say **"help"** anytime.
+>
+> **Power tip (interactive mode only):**
+> ```
+> /fleet review src/ for security, code quality, and architecture in parallel
+> ```
+> `/fleet` dispatches multiple agents simultaneously — like having 3 reviewers working at once.
 
 ---
 
