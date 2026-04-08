@@ -5,8 +5,8 @@ Look up external documentation, API references, library guides, and version comp
 ## Synopsis
 
 ```bash
-copilot --agent omg:document-specialist -p "describe your role" -s --yolo
-copilot -i "@omg:document-specialist analyze this code"
+copilot --agent omg:document-specialist -p "describe your role in one sentence" -s --yolo
+copilot -i "use omg:document-specialist to help with this"
 ```
 
 ## Description
@@ -24,9 +24,20 @@ Look up external documentation, API references, library guides, and version comp
 ## Example
 
 ```bash
-copilot --agent omg:document-specialist -p "describe your role in one sentence" -s --yolo
+copilot --agent omg:document-specialist -p "describe your role and primary value" -s --yolo
 ```
+
+## Quality Contract
+
+- Official docs preferred over blogs/Stack Overflow
+- Version compatibility noted explicitly
+- Every answer includes source URLs
 
 ## Related
 
 See [all agents](../readme.md) for the full catalog.
+
+## See Also
+
+- [All agents](../readme.md)
+- [Best practices](../../best-practices.md)

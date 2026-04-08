@@ -5,8 +5,8 @@ Handle git operations — commits, branches, rebasing, history cleanup. Use for 
 ## Synopsis
 
 ```bash
-copilot --agent omg:git-master -p "describe your role" -s --yolo
-copilot -i "@omg:git-master analyze this code"
+copilot --agent omg:git-master -p "describe your role in one sentence" -s --yolo
+copilot -i "use omg:git-master to help with this"
 ```
 
 ## Description
@@ -24,9 +24,20 @@ Handle git operations — commits, branches, rebasing, history cleanup. Use for 
 ## Example
 
 ```bash
-copilot --agent omg:git-master -p "describe your role in one sentence" -s --yolo
+copilot --agent omg:git-master -p "describe your role and primary value" -s --yolo
 ```
+
+## Quality Contract
+
+- Detects commit style from last 30 commits
+- Splits by concern (3+ files → 2+ commits)
+- Uses --force-with-lease (never --force)
 
 ## Related
 
 See [all agents](../readme.md) for the full catalog.
+
+## See Also
+
+- [All agents](../readme.md)
+- [Best practices](../../best-practices.md)

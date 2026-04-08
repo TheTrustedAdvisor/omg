@@ -5,8 +5,8 @@ Implement code changes, write features, fix bugs, and verify with tests. The wor
 ## Synopsis
 
 ```bash
-copilot --agent omg:executor -p "describe your role" -s --yolo
-copilot -i "@omg:executor analyze this code"
+copilot --agent omg:executor -p "describe your role in one sentence" -s --yolo
+copilot -i "use omg:executor to help with this"
 ```
 
 ## Description
@@ -19,14 +19,25 @@ Implement code changes, write features, fix bugs, and verify with tests. The wor
 
 ## Tools
 
-`view,grep,glob,bash,edit,web_fetch,task,ask_user,**Trivial tasks:** skip extensive exploration, verify only modified file.,**Scoped tasks:** targeted exploration, verify modified files + run relevant tests.,**Complex tasks:** full exploration, full verification suite, document decisions.`
+`view,grep,glob,bash,edit,web_fetch,task,ask_user,**Trivial tasks:** skip extensive exploration, verify only modified file.,**Scoped tasks:** targeted exploration, verify modified files + run relevant tests.`
 
 ## Example
 
 ```bash
-copilot --agent omg:executor -p "describe your role in one sentence" -s --yolo
+copilot --agent omg:executor -p "describe your role and primary value" -s --yolo
 ```
+
+## Quality Contract
+
+- Smallest viable diff — no scope creep
+- Verifies after each change (lint/typecheck on modified files)
+- After 3 failed attempts → escalates to omg:architect
 
 ## Related
 
 See [all agents](../readme.md) for the full catalog.
+
+## See Also
+
+- [All agents](../readme.md)
+- [Best practices](../../best-practices.md)

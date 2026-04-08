@@ -14,7 +14,7 @@ About omg — version, architecture, capabilities, and credits
 
 ## Trigger Keywords
 
-about
+about omg, what is omg, version
 
 ## Example
 
@@ -29,3 +29,8 @@ copilot -i "about omg"
 ## Related
 
 See [all skills](../readme.md) for the full catalog.
+
+## See Also
+
+- [All skills](../readme.md)
+- [Best practices](../../best-practices.md)

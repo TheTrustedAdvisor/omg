@@ -14,7 +14,7 @@ Manage development sessions — branch isolation for issues, PRs, and features
 
 ## Trigger Keywords
 
-project-session-manager
+new session, start issue, work on feature
 
 ## Example
 
@@ -29,3 +29,8 @@ copilot -i "new session for issue 42"
 ## Related
 
 See [all skills](../readme.md) for the full catalog.
+
+## See Also
+
+- [All skills](../readme.md)
+- [Best practices](../../best-practices.md)

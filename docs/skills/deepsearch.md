@@ -14,7 +14,7 @@ Deep codebase search — thorough multi-angle exploration with cross-validation
 
 ## Trigger Keywords
 
-deepsearch
+deepsearch, exhaustive search, find everything
 
 ## Example
 
@@ -29,3 +29,8 @@ copilot -i "deepsearch: find all error handling patterns"
 ## Related
 
 See [all skills](../readme.md) for the full catalog.
+
+## See Also
+
+- [All skills](../readme.md)
+- [Best practices](../../best-practices.md)

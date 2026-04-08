@@ -14,7 +14,7 @@ Cancel any active execution mode — stops autopilot, ralph, ultrawork, team, ul
 
 ## Trigger Keywords
 
-cancel
+cancel, stop, abort, cancelomc
 
 ## Example
 
@@ -29,3 +29,8 @@ copilot -i "cancelomc"
 ## Related
 
 See [all skills](../readme.md) for the full catalog.
+
+## See Also
+
+- [All skills](../readme.md)
+- [Best practices](../../best-practices.md)

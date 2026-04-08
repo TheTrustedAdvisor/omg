@@ -77,8 +77,17 @@ Display this quick reference:
 ### Quick Links
 
 - "about" — what is omg, version, architecture
+- "btw" — quick side-question without derailing your task
+- "tutorial" — interactive 5-step walkthrough
 - "agent-catalog" — full agent directory with model/effort routing
-- "handoff-protocol" — how agents share data via .omg/ directories
+
+### Online Documentation
+
+Full man-pages for every agent and skill:
+
+- **Agents:** https://github.com/TheTrustedAdvisor/omg/tree/main/docs/agents
+- **Skills:** https://github.com/TheTrustedAdvisor/omg/tree/main/docs/skills
+- **All docs:** https://github.com/TheTrustedAdvisor/omg/tree/main/docs
 
 ## Trigger Keywords
 

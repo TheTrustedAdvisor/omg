@@ -14,7 +14,7 @@ Evidence-driven tracing — orchestrate competing hypotheses to explain observed
 
 ## Trigger Keywords
 
-trace
+trace, root cause, why did this happen
 
 ## Example
 
@@ -29,3 +29,8 @@ copilot -i "trace: why did the deploy fail?"
 ## Related
 
 See [all skills](../readme.md) for the full catalog.
+
+## See Also
+
+- [All skills](../readme.md)
+- [Best practices](../../best-practices.md)

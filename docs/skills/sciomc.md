@@ -14,7 +14,7 @@ Activates parallel research — staged scientist agents investigate from multipl
 
 ## Trigger Keywords
 
-sciomc
+sciomc, research, parallel analysis
 
 ## Example
 
@@ -29,3 +29,8 @@ copilot -i "sciomc: analyze test coverage patterns"
 ## Related
 
 See [all skills](../readme.md) for the full catalog.
+
+## See Also
+
+- [All skills](../readme.md)
+- [Best practices](../../best-practices.md)

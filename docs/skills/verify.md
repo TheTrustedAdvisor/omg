@@ -14,7 +14,7 @@ Evidence-based verification — fresh test output, acceptance criteria check, PA
 
 ## Trigger Keywords
 
-verify
+verify, verify work, check completion
 
 ## Example
 
@@ -29,3 +29,8 @@ copilot -i "verify that all tests pass"
 ## Related
 
 See [all skills](../readme.md) for the full catalog.
+
+## See Also
+
+- [All skills](../readme.md)
+- [Best practices](../../best-practices.md)

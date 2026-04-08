@@ -14,7 +14,7 @@ Strategic planning — interview workflow, direct planning, consensus mode, or p
 
 ## Trigger Keywords
 
-plan
+plan, how should we, strategy, design
 
 ## Example
 
@@ -24,8 +24,13 @@ copilot -i "plan: add input validation to CLI commands"
 
 ## Quality Contract
 
-- 3-6 steps with testable acceptance criteria, analyst pre-flight
+- 3-6 steps with testable acceptance criteria
 
 ## Related
 
 See [all skills](../readme.md) for the full catalog.
+
+## See Also
+
+- [All skills](../readme.md)
+- [Best practices](../../best-practices.md)

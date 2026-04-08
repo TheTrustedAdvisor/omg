@@ -14,7 +14,7 @@ Activates autonomous code improvement — competing strategies, benchmarking, to
 
 ## Trigger Keywords
 
-self-improve
+self-improve, optimize, autonomous improvement
 
 ## Example
 
@@ -29,3 +29,8 @@ copilot -i "self-improve: optimize pipeline performance"
 ## Related
 
 See [all skills](../readme.md) for the full catalog.
+
+## See Also
+
+- [All skills](../readme.md)
+- [Best practices](../../best-practices.md)

@@ -5,7 +5,7 @@ Activates full autonomous execution — from idea to working, verified code
 ## Synopsis
 
 ```bash
-copilot -i autopilot
+copilot -i "autopilot: add a health check endpoint"
 ```
 
 ## Description
@@ -14,18 +14,23 @@ Activates full autonomous execution — from idea to working, verified code
 
 ## Trigger Keywords
 
-autopilot
+autopilot, build me, create me, full auto, handle it all
 
 ## Example
 
 ```bash
-copilot -i autopilot: your task here
+copilot -i "autopilot: add a health check endpoint"
 ```
 
 ## Quality Contract
 
-- Every claim backed by evidence (fresh test output)
+- Plans before coding, verifies with evidence, persists artifacts
 
 ## Related
 
 See [all skills](../readme.md) for the full catalog.
+
+## See Also
+
+- [All skills](../readme.md)
+- [Best practices](../../best-practices.md)

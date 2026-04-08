@@ -14,7 +14,7 @@ Activates deep investigation → cloud agent PR creation (Copilot-exclusive)
 
 ## Trigger Keywords
 
-research-to-pr
+research and fix, investigate and PR, research-to-pr
 
 ## Example
 
@@ -29,3 +29,8 @@ copilot -i "research-to-pr: fix the auth token expiry bug"
 ## Related
 
 See [all skills](../readme.md) for the full catalog.
+
+## See Also
+
+- [All skills](../readme.md)
+- [Best practices](../../best-practices.md)

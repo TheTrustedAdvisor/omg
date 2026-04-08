@@ -6,7 +6,7 @@ Extract a reusable skill from the current conversation — learn from what just 
 ## Synopsis
 
 ```bash
-copilot -i learner
+copilot -i "learner: extract a skill from this workflow"
 ```
 
 ## Description
@@ -16,12 +16,12 @@ Extract a reusable skill from the current conversation — learn from what just 
 
 ## Trigger Keywords
 
-learner
+learn this, save as skill, remember how
 
 ## Example
 
 ```bash
-copilot -i learner: your task here
+copilot -i "learner: extract a skill from this workflow"
 ```
 
 ## Quality Contract
@@ -31,3 +31,8 @@ copilot -i learner: your task here
 ## Related
 
 See [all skills](../readme.md) for the full catalog.
+
+## See Also
+
+- [All skills](../readme.md)
+- [Best practices](../../best-practices.md)

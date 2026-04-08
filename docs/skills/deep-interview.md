@@ -5,7 +5,7 @@ Socratic deep interview with ambiguity scoring — crystallize vague ideas into 
 ## Synopsis
 
 ```bash
-copilot -i deep-interview
+copilot -i "deep interview: I want to build a notification system"
 ```
 
 ## Description
@@ -14,12 +14,12 @@ Socratic deep interview with ambiguity scoring — crystallize vague ideas into 
 
 ## Trigger Keywords
 
-deep-interview
+deep interview, interview me, socratic
 
 ## Example
 
 ```bash
-copilot -i deep-interview: your task here
+copilot -i "deep interview: I want to build a notification system"
 ```
 
 ## Quality Contract
@@ -29,3 +29,8 @@ copilot -i deep-interview: your task here
 ## Related
 
 See [all skills](../readme.md) for the full catalog.
+
+## See Also
+
+- [All skills](../readme.md)
+- [Best practices](../../best-practices.md)

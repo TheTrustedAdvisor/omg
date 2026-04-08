@@ -14,7 +14,7 @@ Auto-detect and install Microsoft Copilot Skills — Fabric, Azure SQL, DevOps, 
 
 ## Trigger Keywords
 
-ms-discover
+microsoft skills, ms-discover, add fabric
 
 ## Example
 
@@ -29,3 +29,8 @@ copilot -i "ms-discover"
 ## Related
 
 See [all skills](../readme.md) for the full catalog.
+
+## See Also
+
+- [All skills](../readme.md)
+- [Best practices](../../best-practices.md)

@@ -5,8 +5,8 @@ Analyze data, test hypotheses, and produce statistically rigorous findings. Use 
 ## Synopsis
 
 ```bash
-copilot --agent omg:scientist -p "describe your role" -s --yolo
-copilot -i "@omg:scientist analyze this code"
+copilot --agent omg:scientist -p "describe your role in one sentence" -s --yolo
+copilot -i "use omg:scientist to help with this"
 ```
 
 ## Description
@@ -24,9 +24,20 @@ Analyze data, test hypotheses, and produce statistically rigorous findings. Use 
 ## Example
 
 ```bash
-copilot --agent omg:scientist -p "describe your role in one sentence" -s --yolo
+copilot --agent omg:scientist -p "describe your role and primary value" -s --yolo
 ```
+
+## Quality Contract
+
+- Every finding backed by confidence interval + evidence
+- Uses matplotlib with Agg backend, saves (never show)
+- READ-ONLY on application code
 
 ## Related
 
 See [all agents](../readme.md) for the full catalog.
+
+## See Also
+
+- [All agents](../readme.md)
+- [Best practices](../../best-practices.md)

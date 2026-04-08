@@ -14,7 +14,7 @@ Structured debugging — reproduce, diagnose, fix with @omg:debugger agent
 
 ## Trigger Keywords
 
-debug
+debug, error, failure, broken
 
 ## Example
 
@@ -29,3 +29,8 @@ copilot -i "debug: tests failing in src/pipeline/"
 ## Related
 
 See [all skills](../readme.md) for the full catalog.
+
+## See Also
+
+- [All skills](../readme.md)
+- [Best practices](../../best-practices.md)

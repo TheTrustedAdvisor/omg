@@ -14,7 +14,7 @@ Activates investigation-to-requirements pipeline — trace root cause then cryst
 
 ## Trigger Keywords
 
-deep-dive
+deep dive, investigate deeply, trace and interview
 
 ## Example
 
@@ -29,3 +29,8 @@ copilot -i "deep-dive: why is the build slow"
 ## Related
 
 See [all skills](../readme.md) for the full catalog.
+
+## See Also
+
+- [All skills](../readme.md)
+- [Best practices](../../best-practices.md)

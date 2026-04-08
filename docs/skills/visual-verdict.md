@@ -14,7 +14,7 @@ Screenshot-based visual QA — compare implementation against design references
 
 ## Trigger Keywords
 
-visual-verdict
+visual verdict, compare screenshots, match design
 
 ## Example
 
@@ -29,3 +29,8 @@ copilot -i "visual-verdict: compare these screenshots"
 ## Related
 
 See [all skills](../readme.md) for the full catalog.
+
+## See Also
+
+- [All skills](../readme.md)
+- [Best practices](../../best-practices.md)

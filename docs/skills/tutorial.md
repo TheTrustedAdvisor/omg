@@ -14,7 +14,7 @@ Interactive guided tour of omg — progressive walkthrough from discovery to ful
 
 ## Trigger Keywords
 
-tutorial
+tutorial, show me how, getting started
 
 ## Example
 
@@ -24,8 +24,13 @@ copilot -i "tutorial"
 
 ## Quality Contract
 
-- 5-step progressive walkthrough, interactive, skip/done supported
+- 5-step progressive walkthrough from discovery to execution
 
 ## Related
 
 See [all skills](../readme.md) for the full catalog.
+
+## See Also
+
+- [All skills](../readme.md)
+- [Best practices](../../best-practices.md)

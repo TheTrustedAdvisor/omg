@@ -5,8 +5,8 @@ Evaluate plans, designs, and implementations from multiple perspectives. Final q
 ## Synopsis
 
 ```bash
-copilot --agent omg:critic -p "describe your role" -s --yolo
-copilot -i "@omg:critic analyze this code"
+copilot --agent omg:critic -p "describe your role in one sentence" -s --yolo
+copilot -i "use omg:critic to help with this"
 ```
 
 ## Description
@@ -24,9 +24,20 @@ Evaluate plans, designs, and implementations from multiple perspectives. Final q
 ## Example
 
 ```bash
-copilot --agent omg:critic -p "describe your role in one sentence" -s --yolo
+copilot --agent omg:critic -p "describe your role and primary value" -s --yolo
 ```
+
+## Quality Contract
+
+- Pre-commitment predictions before reading work
+- Multi-perspective: security, new-hire, ops angles
+- Verdicts: REJECT, REVISE, ACCEPT-WITH-RESERVATIONS, ACCEPT
 
 ## Related
 
 See [all agents](../readme.md) for the full catalog.
+
+## See Also
+
+- [All agents](../readme.md)
+- [Best practices](../../best-practices.md)

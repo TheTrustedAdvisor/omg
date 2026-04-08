@@ -14,7 +14,7 @@ Activates parallel team execution — N coordinated agents working simultaneousl
 
 ## Trigger Keywords
 
-team
+team, assemble a team, parallel workers
 
 ## Example
 
@@ -24,8 +24,13 @@ copilot -i "team 3: fix TypeScript errors across src/"
 
 ## Quality Contract
 
-- Parallel, not sequential — never serialize independent work
+- File isolation per worker, combined verification after
 
 ## Related
 
 See [all skills](../readme.md) for the full catalog.
+
+## See Also
+
+- [All skills](../readme.md)
+- [Best practices](../../best-practices.md)

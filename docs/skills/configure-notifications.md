@@ -14,7 +14,7 @@ Set up notification integrations — Telegram, Discord, Slack alerts for long-ru
 
 ## Trigger Keywords
 
-configure-notifications
+configure notifications, setup telegram, setup discord
 
 ## Example
 
@@ -29,3 +29,8 @@ copilot -i "configure notifications"
 ## Related
 
 See [all skills](../readme.md) for the full catalog.
+
+## See Also
+
+- [All skills](../readme.md)
+- [Best practices](../../best-practices.md)

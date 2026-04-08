@@ -14,7 +14,7 @@ Activates parallel execution — fires multiple agents simultaneously for indepe
 
 ## Trigger Keywords
 
-ultrawork
+ultrawork, ulw, parallel fire
 
 ## Example
 
@@ -29,3 +29,8 @@ copilot -i "ulw: search for all TODO comments"
 ## Related
 
 See [all skills](../readme.md) for the full catalog.
+
+## See Also
+
+- [All skills](../readme.md)
+- [Best practices](../../best-practices.md)

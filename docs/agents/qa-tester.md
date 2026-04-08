@@ -5,8 +5,8 @@ Test CLI applications interactively — run commands, check outputs, verify end-
 ## Synopsis
 
 ```bash
-copilot --agent omg:qa-tester -p "describe your role" -s --yolo
-copilot -i "@omg:qa-tester analyze this code"
+copilot --agent omg:qa-tester -p "describe your role in one sentence" -s --yolo
+copilot -i "use omg:qa-tester to help with this"
 ```
 
 ## Description
@@ -24,9 +24,20 @@ Test CLI applications interactively — run commands, check outputs, verify end-
 ## Example
 
 ```bash
-copilot --agent omg:qa-tester -p "describe your role in one sentence" -s --yolo
+copilot --agent omg:qa-tester -p "describe your role and primary value" -s --yolo
 ```
+
+## Quality Contract
+
+- Verifies prerequisites first (tmux, ports, directories)
+- Each test: command sent, expected output, PASS/FAIL
+- Cleans up all sessions even on failure
 
 ## Related
 
 See [all agents](../readme.md) for the full catalog.
+
+## See Also
+
+- [All agents](../readme.md)
+- [Best practices](../../best-practices.md)

@@ -14,7 +14,7 @@ Convert a successful workflow into a reusable SKILL.md file
 
 ## Trigger Keywords
 
-skillify
+skillify, make this a skill
 
 ## Example
 
@@ -29,3 +29,8 @@ copilot -i "skillify: create a skill from the test workflow"
 ## Related
 
 See [all skills](../readme.md) for the full catalog.
+
+## See Also
+
+- [All skills](../readme.md)
+- [Best practices](../../best-practices.md)

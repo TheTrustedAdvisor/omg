@@ -5,8 +5,8 @@ Design and implement user interfaces — responsive layouts, accessible componen
 ## Synopsis
 
 ```bash
-copilot --agent omg:designer -p "describe your role" -s --yolo
-copilot -i "@omg:designer analyze this code"
+copilot --agent omg:designer -p "describe your role in one sentence" -s --yolo
+copilot -i "use omg:designer to help with this"
 ```
 
 ## Description
@@ -24,9 +24,20 @@ Design and implement user interfaces — responsive layouts, accessible componen
 ## Example
 
 ```bash
-copilot --agent omg:designer -p "describe your role in one sentence" -s --yolo
+copilot --agent omg:designer -p "describe your role and primary value" -s --yolo
 ```
+
+## Quality Contract
+
+- Detects frontend framework from package.json first
+- Commits to aesthetic direction before coding
+- Responsive + accessible verification required
 
 ## Related
 
 See [all agents](../readme.md) for the full catalog.
+
+## See Also
+
+- [All agents](../readme.md)
+- [Best practices](../../best-practices.md)

@@ -14,7 +14,7 @@ Save persistent notes and context that survive across sessions
 
 ## Trigger Keywords
 
-remember
+remember, save for later, note this
 
 ## Example
 
@@ -29,3 +29,8 @@ copilot -i "remember: we use vitest not jest"
 ## Related
 
 See [all skills](../readme.md) for the full catalog.
+
+## See Also
+
+- [All skills](../readme.md)
+- [Best practices](../../best-practices.md)

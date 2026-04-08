@@ -14,7 +14,7 @@ Clean AI-generated code — remove unnecessary abstractions, verbose comments, o
 
 ## Trigger Keywords
 
-ai-slop-cleaner
+clean slop, deslop, anti-slop, remove AI patterns
 
 ## Example
 
@@ -29,3 +29,8 @@ copilot -i "clean AI slop in src/"
 ## Related
 
 See [all skills](../readme.md) for the full catalog.
+
+## See Also
+
+- [All skills](../readme.md)
+- [Best practices](../../best-practices.md)

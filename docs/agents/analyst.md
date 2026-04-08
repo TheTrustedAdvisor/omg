@@ -5,8 +5,8 @@ Find what is MISSING in requirements — gaps, edge cases, undefined guardrails,
 ## Synopsis
 
 ```bash
-copilot --agent omg:analyst -p "describe your role" -s --yolo
-copilot -i "@omg:analyst analyze this code"
+copilot --agent omg:analyst -p "describe your role in one sentence" -s --yolo
+copilot -i "use omg:analyst to help with this"
 ```
 
 ## Description
@@ -24,9 +24,20 @@ Find what is MISSING in requirements — gaps, edge cases, undefined guardrails,
 ## Example
 
 ```bash
-copilot --agent omg:analyst -p "describe your role in one sentence" -s --yolo
+copilot --agent omg:analyst -p "describe your role and primary value" -s --yolo
 ```
+
+## Quality Contract
+
+- Finds what is MISSING — gaps, edge cases, undefined guardrails
+- Feeds into planner — use BEFORE creating a plan
+- Prioritizes: critical gaps first, nice-to-haves last
 
 ## Related
 
 See [all agents](../readme.md) for the full catalog.
+
+## See Also
+
+- [All agents](../readme.md)
+- [Best practices](../../best-practices.md)

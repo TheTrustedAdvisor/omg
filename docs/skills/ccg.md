@@ -14,7 +14,7 @@ Claude-Codex-Gemini tri-model orchestration — get three perspectives, then syn
 
 ## Trigger Keywords
 
-ccg
+ccg, tri-model, three perspectives
 
 ## Example
 
@@ -29,3 +29,8 @@ copilot -i "ccg: best approach for caching"
 ## Related
 
 See [all skills](../readme.md) for the full catalog.
+
+## See Also
+
+- [All skills](../readme.md)
+- [Best practices](../../best-practices.md)

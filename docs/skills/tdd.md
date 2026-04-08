@@ -14,7 +14,7 @@ Test-Driven Development mode — strict red-green-refactor discipline
 
 ## Trigger Keywords
 
-tdd
+tdd, test-driven, red green refactor
 
 ## Example
 
@@ -29,3 +29,8 @@ copilot -i "tdd: add email validation function"
 ## Related
 
 See [all skills](../readme.md) for the full catalog.
+
+## See Also
+
+- [All skills](../readme.md)
+- [Best practices](../../best-practices.md)

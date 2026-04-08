@@ -14,7 +14,7 @@ Quick reference — what omg agents and skills are available and how to use them
 
 ## Trigger Keywords
 
-help
+help, omg help, what can you do
 
 ## Example
 
@@ -24,8 +24,13 @@ copilot -i "help"
 
 ## Quality Contract
 
-- Lists all 25 agents, 42 skills, and top 5 workflows
+- Lists all agents, skills, and top 5 workflows
 
 ## Related
 
 See [all skills](../readme.md) for the full catalog.
+
+## See Also
+
+- [All skills](../readme.md)
+- [Best practices](../../best-practices.md)

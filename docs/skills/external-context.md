@@ -14,7 +14,7 @@ External documentation and web research via parallel document-specialist agents
 
 ## Trigger Keywords
 
-external-context
+external context, look up docs, what does API say
 
 ## Example
 
@@ -29,3 +29,8 @@ copilot -i "external-context: vitest snapshot testing API"
 ## Related
 
 See [all skills](../readme.md) for the full catalog.
+
+## See Also
+
+- [All skills](../readme.md)
+- [Best practices](../../best-practices.md)

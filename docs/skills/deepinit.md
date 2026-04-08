@@ -14,7 +14,7 @@ Deep codebase initialization — generate comprehensive documentation for unfami
 
 ## Trigger Keywords
 
-deepinit
+deepinit, codebase docs, initialize docs
 
 ## Example
 
@@ -29,3 +29,8 @@ copilot -i "deepinit"
 ## Related
 
 See [all skills](../readme.md) for the full catalog.
+
+## See Also
+
+- [All skills](../readme.md)
+- [Best practices](../../best-practices.md)

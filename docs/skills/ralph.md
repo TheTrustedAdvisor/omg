@@ -14,7 +14,7 @@ Activates strict completion mode — keeps working until ALL acceptance criteria
 
 ## Trigger Keywords
 
-ralph
+ralph, don't stop, must complete, finish this
 
 ## Example
 
@@ -24,8 +24,13 @@ copilot -i "ralph: fix all lint errors"
 
 ## Quality Contract
 
-- Every acceptance criterion verified with fresh command output
+- Every criterion verified with fresh output, max 5 iterations
 
 ## Related
 
 See [all skills](../readme.md) for the full catalog.
+
+## See Also
+
+- [All skills](../readme.md)
+- [Best practices](../../best-practices.md)

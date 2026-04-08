@@ -5,8 +5,8 @@ Write and update documentation — README, API docs, architecture guides, with v
 ## Synopsis
 
 ```bash
-copilot --agent omg:writer -p "describe your role" -s --yolo
-copilot -i "@omg:writer analyze this code"
+copilot --agent omg:writer -p "describe your role in one sentence" -s --yolo
+copilot -i "use omg:writer to help with this"
 ```
 
 ## Description
@@ -24,9 +24,20 @@ Write and update documentation — README, API docs, architecture guides, with v
 ## Example
 
 ```bash
-copilot --agent omg:writer -p "describe your role in one sentence" -s --yolo
+copilot --agent omg:writer -p "describe your role and primary value" -s --yolo
 ```
+
+## Quality Contract
+
+- Every code example tested and verified
+- Matches existing style/structure
+- Never self-reviews — hands off to separate reviewer
 
 ## Related
 
 See [all agents](../readme.md) for the full catalog.
+
+## See Also
+
+- [All agents](../readme.md)
+- [Best practices](../../best-practices.md)

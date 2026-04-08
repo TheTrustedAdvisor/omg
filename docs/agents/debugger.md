@@ -5,8 +5,8 @@ Debug and FIX — find the root cause, apply the minimal fix, verify it works. U
 ## Synopsis
 
 ```bash
-copilot --agent omg:debugger -p "describe your role" -s --yolo
-copilot -i "@omg:debugger analyze this code"
+copilot --agent omg:debugger -p "describe your role in one sentence" -s --yolo
+copilot -i "use omg:debugger to help with this"
 ```
 
 ## Description
@@ -24,9 +24,20 @@ Debug and FIX — find the root cause, apply the minimal fix, verify it works. U
 ## Example
 
 ```bash
-copilot --agent omg:debugger -p "describe your role in one sentence" -s --yolo
+copilot --agent omg:debugger -p "describe your role and primary value" -s --yolo
 ```
+
+## Quality Contract
+
+- Reproduces BEFORE investigating
+- One hypothesis at a time (no bundled fixes)
+- After 3 failed hypotheses → escalates to omg:architect
 
 ## Related
 
 See [all agents](../readme.md) for the full catalog.
+
+## See Also
+
+- [All agents](../readme.md)
+- [Best practices](../../best-practices.md)

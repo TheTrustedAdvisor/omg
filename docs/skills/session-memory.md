@@ -5,7 +5,7 @@ Cross-session persistent context — remember project decisions, architecture ch
 ## Synopsis
 
 ```bash
-copilot -i session-memory
+copilot -i "session-memory: save current project context"
 ```
 
 ## Description
@@ -14,12 +14,12 @@ Cross-session persistent context — remember project decisions, architecture ch
 
 ## Trigger Keywords
 
-session-memory
+session memory, save context, what do you remember
 
 ## Example
 
 ```bash
-copilot -i session-memory: your task here
+copilot -i "session-memory: save current project context"
 ```
 
 ## Quality Contract
@@ -29,3 +29,8 @@ copilot -i session-memory: your task here
 ## Related
 
 See [all skills](../readme.md) for the full catalog.
+
+## See Also
+
+- [All skills](../readme.md)
+- [Best practices](../../best-practices.md)

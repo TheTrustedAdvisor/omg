@@ -14,7 +14,7 @@ Route questions to Claude, Codex, or Gemini for multi-perspective answers
 
 ## Trigger Keywords
 
-ask
+ask claude, ask codex, ask gemini
 
 ## Example
 
@@ -29,3 +29,8 @@ copilot -i "ask claude: what is the IR pipeline pattern?"
 ## Related
 
 See [all skills](../readme.md) for the full catalog.
+
+## See Also
+
+- [All skills](../readme.md)
+- [Best practices](../../best-practices.md)

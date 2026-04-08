@@ -14,7 +14,7 @@ Agentic memory system for writers — track characters, relationships, scenes, t
 
 ## Trigger Keywords
 
-writer-memory
+writer memory, add character, track story
 
 ## Example
 
@@ -29,3 +29,8 @@ copilot -i "writer-memory: add character Alice"
 ## Related
 
 See [all skills](../readme.md) for the full catalog.
+
+## See Also
+
+- [All skills](../readme.md)
+- [Best practices](../../best-practices.md)

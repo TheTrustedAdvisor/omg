@@ -14,7 +14,7 @@ Deep reasoning mode — engage opus-class model for complex analysis requiring e
 
 ## Trigger Keywords
 
-ultrathink
+ultrathink, deep reasoning, think deeply
 
 ## Example
 
@@ -29,3 +29,8 @@ copilot -i "ultrathink: should we use microservices or monolith?"
 ## Related
 
 See [all skills](../readme.md) for the full catalog.
+
+## See Also
+
+- [All skills](../readme.md)
+- [Best practices](../../best-practices.md)
