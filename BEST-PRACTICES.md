@@ -134,4 +134,47 @@ tags:
 
 ## Example
 - Copy-paste command + expected output
+
+## Diagram (where applicable)
+- Mermaid diagram showing the workflow
 ```
+
+## Documentation Standards
+
+Every document in the omg project MUST include:
+
+### 1. Visual overview (Mermaid)
+Use Mermaid diagrams to visualize:
+- **Flowcharts** for decision trees and routing
+- **Sequence diagrams** for multi-agent interactions
+- **Graph TD/LR** for architecture and data flow
+
+```markdown
+## Example Mermaid usage:
+
+` ` `mermaid
+graph LR
+    User --> Agent --> Skill --> Result
+` ` `
+```
+
+### 2. Copy-paste example
+Every feature, skill, or agent MUST have a runnable example:
+```bash
+copilot -i "command here"
+```
+With expected output shown below.
+
+### 3. Cross-references
+Link to related docs using relative paths:
+```markdown
+See [Architecture](../docs/architecture/pipeline.md) for details.
+```
+
+### 4. Animated demos (for key features)
+Record with asciinema, convert with agg:
+```bash
+asciinema rec demo.cast --command "copilot -p '...' -s --yolo"
+agg demo.cast demo.gif --theme dracula --font-size 16 --speed 2
+```
+Embed: `![demo](assets/demo.gif)`
