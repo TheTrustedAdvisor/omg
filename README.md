@@ -288,10 +288,12 @@ Features that only work on Copilot, not on other AI coding tools:
 
 ## Documentation
 
-- [ARCHITECTURE.md](ARCHITECTURE.md) — How it works under the hood (14 Mermaid diagrams)
-- [LIMITATIONS.md](LIMITATIONS.md) — Known gaps and when they'll be resolved
-- [LESSONS-LEARNED.md](LESSONS-LEARNED.md) — Empirical findings from testing
-- [BURNDOWN.md](BURNDOWN.md) — Feature coverage tracking
+- [Architecture](../docs/architecture/plugin.md) — How it works under the hood + empirical findings
+- [Copilot Capabilities](../docs/architecture/copilot-capabilities.md) — Every Copilot feature omg uses
+- [Examples](EXAMPLES.md) — 10 copy-paste demos with expected output
+- [Best Practices](BEST-PRACTICES.md) — Dos, don'ts, documentation standards
+- [Limitations](../docs/reviews/limitations.md) — Known gaps and platform limitations
+- [All docs](../docs/README.md) — Full documentation index
 
 ## Credits
 
