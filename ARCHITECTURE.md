@@ -14,7 +14,7 @@ The pipeline compiles OMC source material into Copilot-native format.
 ```mermaid
 graph LR
     subgraph Sources
-        OMC[OMC Repo<br/>28 agents, 41 skills]
+        OMC[OMC Repo<br/>25 agents, 41 skills]
         MS[Microsoft Skills<br/>6 repos]
         AC[awesome-copilot<br/>Community index]
     end
@@ -30,7 +30,7 @@ graph LR
 
     subgraph Output["omg Plugin (Product)"]
         PJ[plugin.json]
-        AG[28 agents/*.agent.md]
+        AG[25 agents/*.agent.md]
         SK[28 skills/*/SKILL.md]
         HK[hooks.json]
         LM[LIMITATIONS.md]
@@ -46,7 +46,7 @@ graph LR
 
     subgraph User["User's Copilot"]
         INST[copilot plugin install ./plugin]
-        INST --> USE[28 agents + 41 skills active]
+        INST --> USE[25 agents + 41 skills active]
     end
 
     Output --> INST
@@ -60,7 +60,7 @@ plugin/
 ├── ARCHITECTURE.md                      ← This file
 ├── LIMITATIONS.md                       ← Known gaps + "improve when" triggers
 ├── hooks.json                           ← Lifecycle hooks (currently empty)
-├── agents/                              ← 28 agents (19 specialists + 9 orchestrators)
+├── agents/                              ← 25 agents (19 specialists + 6 orchestrators)
 │   ├── executor.agent.md                ← sonnet, FULL tools
 │   ├── debugger.agent.md                ← sonnet, FULL tools
 │   ├── verifier.agent.md                ← sonnet, verification
@@ -453,7 +453,7 @@ graph LR
 
 | OMC Feature | omg Implementation | Fidelity |
 |-------------|-------------------|----------|
-| 28 agents (19 specialists + 9 orchestrators) | .agent.md files with Copilot-native tools | **Full** |
+| 25 agents (19 specialists + 6 orchestrators) | .agent.md files with Copilot-native tools | **Full** |
 | 28 portable skills | SKILL.md files with auto-discovery | **Full** |
 | Model routing | `task(model=...)` per subagent | **Full** (via delegation) |
 | Agent delegation | `task(agent_type="omg:X")` | **Full** |
@@ -574,7 +574,7 @@ For instructions that ARE followed (agent identity, tool usage, output format), 
 | Agent frontmatter (architect) | claude-opus-4.6 | claude-sonnet-4.6 |
 | task() call parameter | claude-haiku-4.5 | claude-sonnet-4.6 |
 
-**Implication:** Multi-model routing (haiku for speed, opus for depth) has never been active. All 28 agents run on the same model. Cost optimization via model tiers is not possible until this is fixed or clarified by the Copilot CLI team (github/copilot-cli#2564).
+**Implication:** Multi-model routing (haiku for speed, opus for depth) has never been active. All 25 agents run on the same model. Cost optimization via model tiers is not possible until this is fixed or clarified by the Copilot CLI team (github/copilot-cli#2564).
 
 **Workaround:** Users can change the session model with `/model` or `--model` CLI flag. But per-agent model routing is not available.
 

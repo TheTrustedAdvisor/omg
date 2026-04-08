@@ -1,6 +1,6 @@
 # omg — Multi-Agent Orchestration for GitHub Copilot
 
-**28 AI agents. 41 skills. One plugin.**
+**25 AI agents. 41 skills. One plugin.**
 
 omg turns GitHub Copilot CLI into a multi-agent development platform. Instead of one AI assistant doing everything, omg gives you a team of specialists — an architect who analyzes code, a debugger who traces root causes, a critic who reviews plans, an executor who implements changes — all coordinating autonomously through structured workflows.
 
@@ -21,7 +21,7 @@ One command:
 copilot plugin install TheTrustedAdvisor/omg
 ```
 
-That's it. 28 agents + 41 skills, ready to use.
+That's it. 25 agents + 41 skills, ready to use.
 
 <details>
 <summary>Alternative install methods</summary>

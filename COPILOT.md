@@ -11,8 +11,8 @@ are why omg exists specifically for Copilot, not as a generic AI tool.
 | Capability | How omg Uses It | Status |
 |-----------|----------------|--------|
 | `copilot plugin install` | One-command installation from GitHub repo | Active |
-| `plugin.json` manifest | Declares 28 agents + 41 skills + hooks | Active |
-| `agents/` directory | 28 `.agent.md` files auto-discovered (19 specialists + 9 orchestrators) | Active |
+| `plugin.json` manifest | Declares 25 agents + 41 skills + hooks | Active |
+| `agents/` directory | 25 `.agent.md` files auto-discovered (19 specialists + 6 orchestrators) | Active |
 | `skills/` directory | 37 `SKILL.md` files auto-discovered by keyword | Active |
 | `AGENTS.md` | Global config loaded into every session | Active |
 | Plugin versioning | `version` field in plugin.json for update detection | Active |
@@ -23,7 +23,7 @@ are why omg exists specifically for Copilot, not as a generic AI tool.
 |-----------|----------------|--------|
 | `.agent.md` format | YAML frontmatter (name, description, model, tools) + Markdown body | Active |
 | Agent invocation (`--agent`) | `copilot -p "..." --agent omg:explorer` | Active |
-| Agent namespace (`omg:`) | All 28 agents prefixed for collision avoidance | Active |
+| Agent namespace (`omg:`) | All 25 agents prefixed for collision avoidance | Active |
 | `report_intent` tool | Live status updates during agent work (4-word gerund phrases) | Active |
 | `skill` tool | Agents activate skills by name | Active |
 
@@ -33,7 +33,7 @@ This is omg's most critical Copilot dependency — the `task()` API enables ever
 
 | Capability | How omg Uses It | Status |
 |-----------|----------------|--------|
-| `task(agent_type, prompt, model, mode)` | All inter-agent delegation (28 agents routing to each other) | Active |
+| `task(agent_type, prompt, model, mode)` | All inter-agent delegation (25 agents routing to each other) | Active |
 | `mode="background"` | Parallel execution — multiple agents simultaneously | Active |
 | `mode="sync"` | Sequential execution — wait for result before proceeding | Active |
 | `model` parameter | Per-task model selection (haiku/sonnet/opus) | Active |
