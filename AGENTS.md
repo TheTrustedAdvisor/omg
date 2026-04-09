@@ -52,41 +52,52 @@ Call `report_intent` at each phase shift with a 4-word gerund phrase:
 
 ### 2. Phase Announcements
 
-At the start of each major step:
+**CLI** (compact, grep-friendly):
 ```
-━━━ omg: {agent} ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Phase: {phase name}
-Action: {what you're doing}
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+[omg:executor] ▶ Implementation — src/commands/init.ts
+[omg:verifier] ▶ Verification — running npm test
+```
+
+**VS Code** (rich Markdown):
+```
+### omg:executor — Implementation
+Working on `src/commands/init.ts`
 ```
 
 ### 3. Delegation Announcements
 
 When spawning subagents:
 ```
-[omg] → {agent} ({model}, {mode}, effort:{effort}) — {task}
+[omg] → {agent} ({model}, {mode}) — {task}
 ```
 When they complete:
 ```
-[omg] ← {agent} completed ({duration}) — {one-line result}
+[omg] ← {agent} ✓ ({duration}) — {one-line result}
 ```
 
 ### 4. Parallel Work Visibility
 
-When running multiple agents:
+Show live status with elapsed time:
 ```
-[omg] ⟦ parallel: 3 agents ⟧
-  → explore (haiku, background) — finding auth files
-  → analyst (opus, background) — gap analysis
-  → architect (opus, background) — reviewing design
+[omg] ⟦3 agents⟧  explore(✓ 2s)  analyst(… 8s)  architect(… 8s)
 ```
+
+Update via `report_intent` when each agent completes.
 
 ### 5. Verification Results
 
+**CLI** (dense, one-line):
 ```
-[omg] ✓ Build: PASS (105 KB)
-[omg] ✓ Tests: PASS (374 passed, 9 skipped)
-[omg] ✗ Lint: FAIL (2 errors in src/config.ts)
+[omg] build✓  tests✓(538)  lint✗(2err:config.ts)
+```
+
+**VS Code** (table):
+```
+| Check | Result | Details |
+|-------|--------|---------|
+| Build | ✓ PASS | 105 KB |
+| Tests | ✓ PASS | 538 passed, 9 skipped |
+| Lint | ✗ FAIL | 2 errors in src/config.ts |
 ```
 
 ## Reading Background Agent Output
