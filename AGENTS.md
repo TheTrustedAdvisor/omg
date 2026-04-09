@@ -99,6 +99,12 @@ When reading output from a background `task` agent:
 4. **Never enter a read loop.** If `read_agent` returns a file reference, read it, extract what you need, move on.
 5. For very large results: ask the background agent to summarize before returning (include "Summarize your findings in under 50 lines" in the task prompt).
 
+## Platform Detection
+
+Check `$COPILOT_CLI` to detect the runtime:
+- **CLI** (`COPILOT_CLI=1`): use `task(mode="background")` for parallel dispatch, text output
+- **VS Code** (no `COPILOT_CLI`): use `/fleet` for parallel dispatch, rich Markdown output
+
 ## Language Handling
 
 **Users may speak any language.** Before matching intent to agents or skills, translate the user's request to English keywords internally. All agent descriptions and skill triggers are in English.
