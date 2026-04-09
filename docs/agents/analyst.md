@@ -11,6 +11,17 @@ copilot -i "use omg:analyst to help with this"
 
 ## Description
 
+```mermaid
+graph LR
+    Vague[Vague Requirements] --> AN[omg:analyst]
+    AN -->|gaps + edge cases| PL[omg:planner]
+    PL -->|plan| EX[omg:executor]
+    
+    style AN fill:#cc5de8,color:#fff
+    style PL fill:#cc5de8,color:#fff
+    style EX fill:#51cf66,color:#000
+```
+
 Find what is MISSING in requirements — gaps, edge cases, undefined guardrails, hidden assumptions. Feeds into planner. Use BEFORE creating a plan.
 
 ## Model

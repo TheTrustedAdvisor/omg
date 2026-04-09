@@ -11,6 +11,21 @@ copilot -i "use omg:verifier to help with this"
 
 ## Description
 
+```mermaid
+graph LR
+    Work[Completed Work] --> VR[omg:verifier]
+    VR -->|run tests| Fresh[Fresh Output]
+    VR -->|check criteria| Criteria[Acceptance Criteria]
+    Fresh --> V{PASS?}
+    Criteria --> V
+    V -->|yes| PASS[PASS with evidence]
+    V -->|no| FAIL[FAIL with gaps]
+    
+    style VR fill:#ff922b,color:#fff
+    style PASS fill:#51cf66,color:#000
+    style FAIL fill:#ff6b6b,color:#fff
+```
+
 Verify that work is complete — run tests, check acceptance criteria, produce PASS/FAIL verdicts with evidence. Use after implementation to confirm everything works.
 
 ## Model

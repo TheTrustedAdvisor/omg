@@ -11,6 +11,14 @@ copilot -i "use omg:git-master to help with this"
 
 ## Description
 
+```mermaid
+graph LR
+    Input[Task] --> A[omg:git-master]
+    A --> Output[Result]
+    
+    style A fill:#51cf66,color:#000
+```
+
 Handle git operations — commits, branches, rebasing, history cleanup. Use for version control, release preparation, and clean git history.
 
 ## Model

@@ -11,6 +11,18 @@ copilot -i "use omg:executor to help with this"
 
 ## Description
 
+```mermaid
+graph LR
+    Task[Task] --> EX[omg:executor]
+    EX -->|implement| Code[Code Changes]
+    Code -->|verify| Test[Tests Pass]
+    EX -.->|3 failures| AR[omg:architect]
+    
+    style EX fill:#51cf66,color:#000
+    style Test fill:#51cf66,color:#000
+    style AR fill:#cc5de8,color:#fff
+```
+
 Implement code changes, write features, fix bugs, and verify with tests. The workhorse agent for any coding task. Use for implementation work of any size.
 
 ## Model

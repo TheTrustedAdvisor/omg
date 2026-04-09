@@ -11,6 +11,14 @@ copilot -i "use omg:designer to help with this"
 
 ## Description
 
+```mermaid
+graph LR
+    Input[Task] --> A[omg:designer]
+    A --> Output[Result]
+    
+    style A fill:#51cf66,color:#000
+```
+
 Design and implement user interfaces — responsive layouts, accessible components, production-grade aesthetics. Use for frontend work, UI fixes, and visual design.
 
 ## Model

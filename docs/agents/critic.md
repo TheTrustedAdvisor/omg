@@ -11,6 +11,19 @@ copilot -i "use omg:critic to help with this"
 
 ## Description
 
+```mermaid
+graph LR
+    Plan[Plan/Work] --> CR[omg:critic]
+    CR -->|multi-perspective| V{Verdict}
+    V -->|ACCEPT| GO[Proceed]
+    V -->|REVISE| REV[Back to author]
+    V -->|REJECT| STOP[Stop + findings]
+    
+    style CR fill:#cc5de8,color:#fff
+    style GO fill:#51cf66,color:#000
+    style STOP fill:#ff6b6b,color:#fff
+```
+
 Evaluate plans, designs, and implementations from multiple perspectives. Final quality gate before execution. Use for plan review, architecture validation, and go/no-go decisions.
 
 ## Model

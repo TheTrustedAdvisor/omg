@@ -11,6 +11,14 @@ copilot -i "use omg:qa-tester to help with this"
 
 ## Description
 
+```mermaid
+graph LR
+    Input[Task] --> A[omg:qa-tester]
+    A --> Output[Result]
+    
+    style A fill:#51cf66,color:#000
+```
+
 Test CLI applications interactively — run commands, check outputs, verify end-to-end behavior. Use for manual testing and acceptance verification.
 
 ## Model

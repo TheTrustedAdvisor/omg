@@ -11,6 +11,25 @@ copilot -i "use omg:explore to help with this"
 
 ## Description
 
+```mermaid
+graph TD
+    Q[Query] --> EXP[omg:explore]
+    EXP --> S1[grep exact name]
+    EXP --> S2[glob patterns]
+    EXP --> S3[import/export scan]
+    EXP --> S4[test files]
+    EXP --> S5[docs/config]
+    S1 --> XV[Cross-validate]
+    S2 --> XV
+    S3 --> XV
+    S4 --> XV
+    S5 --> XV
+    XV --> R[Structured Findings]
+    
+    style EXP fill:#51cf66,color:#000
+    style XV fill:#ff922b,color:#fff
+```
+
 Search and explore codebases — find files, patterns, dependencies, and relationships. Use when you need to understand or navigate code.
 
 ## Model

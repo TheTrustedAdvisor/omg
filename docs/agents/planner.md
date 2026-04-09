@@ -11,6 +11,19 @@ copilot -i "use omg:planner to help with this"
 
 ## Description
 
+```mermaid
+graph LR
+    U[User Request] --> PL[omg:planner]
+    PL -->|explore| EXP[omg:explore]
+    PL -->|gap analysis| AN[omg:analyst]
+    PL -->|consensus mode| AR[omg:architect]
+    AR --> CR[omg:critic]
+    PL --> Plan[".omg/plans/*.md"]
+    
+    style PL fill:#cc5de8,color:#fff
+    style Plan fill:#51cf66,color:#000
+```
+
 Create implementation plans with testable acceptance criteria FROM a spec or requirements. Use AFTER analyst has identified gaps. Produces actionable steps.
 
 ## Model

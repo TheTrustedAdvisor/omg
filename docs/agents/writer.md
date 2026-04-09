@@ -11,6 +11,14 @@ copilot -i "use omg:writer to help with this"
 
 ## Description
 
+```mermaid
+graph LR
+    Input[Task] --> A[omg:writer]
+    A --> Output[Result]
+    
+    style A fill:#51cf66,color:#000
+```
+
 Write and update documentation — README, API docs, architecture guides, with verified code examples. Use for any documentation task.
 
 ## Model

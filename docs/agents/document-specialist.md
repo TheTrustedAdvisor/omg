@@ -11,6 +11,14 @@ copilot -i "use omg:document-specialist to help with this"
 
 ## Description
 
+```mermaid
+graph LR
+    Input[Task] --> A[omg:document-specialist]
+    A --> Output[Result]
+    
+    style A fill:#51cf66,color:#000
+```
+
 Look up external documentation, API references, library guides, and version compatibility. Use when you need official docs or framework knowledge.
 
 ## Model

@@ -11,6 +11,14 @@ copilot -i "use omg:code-simplifier to help with this"
 
 ## Description
 
+```mermaid
+graph LR
+    Input[Task] --> A[omg:code-simplifier]
+    A --> Output[Result]
+    
+    style A fill:#51cf66,color:#000
+```
+
 Simplify and refactor code for clarity, remove unnecessary complexity, clean up abstractions. Use for refactoring, tech debt cleanup, and AI slop removal.
 
 ## Model

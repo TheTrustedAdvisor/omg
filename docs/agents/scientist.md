@@ -11,6 +11,14 @@ copilot -i "use omg:scientist to help with this"
 
 ## Description
 
+```mermaid
+graph LR
+    Input[Task] --> A[omg:scientist]
+    A --> Output[Result]
+    
+    style A fill:#51cf66,color:#000
+```
+
 Analyze data, test hypotheses, and produce statistically rigorous findings. Use for data investigations, performance analysis, and research questions.
 
 ## Model

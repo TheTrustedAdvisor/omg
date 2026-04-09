@@ -11,6 +11,14 @@ copilot -i "use omg:test-engineer to help with this"
 
 ## Description
 
+```mermaid
+graph LR
+    Input[Task] --> A[omg:test-engineer]
+    A --> Output[Result]
+    
+    style A fill:#51cf66,color:#000
+```
+
 Write tests, design test strategies, fix flaky tests, and improve coverage. Use for TDD, adding missing tests, and test infrastructure work.
 
 ## Model

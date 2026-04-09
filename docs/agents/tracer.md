@@ -11,6 +11,21 @@ copilot -i "use omg:tracer to help with this"
 
 ## Description
 
+```mermaid
+graph TD
+    OBS[Observation] --> TR[omg:tracer]
+    TR --> H1[Hypothesis 1]
+    TR --> H2[Hypothesis 2]
+    TR --> H3[Hypothesis 3]
+    H1 -->|evidence for/against| RANK[Rank by strength]
+    H2 -->|evidence for/against| RANK
+    H3 -->|evidence for/against| RANK
+    RANK --> BEST[Best Explanation + Probe]
+    
+    style TR fill:#ff922b,color:#fff
+    style RANK fill:#ffd43b,color:#000
+```
+
 Investigate WHY without fixing — generate competing hypotheses, rank by evidence, recommend next probe. Use when you need to UNDERSTAND a problem, not fix it yet.
 
 ## Model

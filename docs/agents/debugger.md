@@ -11,6 +11,19 @@ copilot -i "use omg:debugger to help with this"
 
 ## Description
 
+```mermaid
+graph LR
+    Bug[Bug Report] --> DB[omg:debugger]
+    DB -->|reproduce| R[Reproduction]
+    R -->|diagnose| RC[Root Cause]
+    RC -->|minimal fix| FIX[Fixed + Verified]
+    DB -.->|3 failures| AR[omg:architect]
+    
+    style DB fill:#ff922b,color:#fff
+    style FIX fill:#51cf66,color:#000
+    style AR fill:#cc5de8,color:#fff
+```
+
 Debug and FIX — find the root cause, apply the minimal fix, verify it works. Use when something is broken and needs to be working again.
 
 ## Model
