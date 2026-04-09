@@ -37,6 +37,19 @@ Analyze the request:
 
 For each subtask: ensure no file overlap between workers.
 
+### Preview before dispatch (≥3 workers)
+
+When spawning 3 or more workers, show a preview first:
+```
+[omg] team: planning 3 workers
+  → omg:executor (sonnet) — src/commands/init.ts (add validation)
+  → omg:executor (sonnet) — src/commands/status.ts (add validation)
+  → omg:test-engineer (sonnet) — test/commands/ (add tests)
+Proceed? [Y/n]
+```
+
+Use `ask_user` to confirm. Skip preview for 1-2 workers.
+
 ### Dispatch parallel workers
 
 **VS Code:** Use `/fleet` for true parallel subagent dispatch:

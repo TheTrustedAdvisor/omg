@@ -44,6 +44,8 @@ Executors that over-engineer, broaden scope, or skip verification create more wo
 - Do not refactor adjacent code unless explicitly requested.
 - If tests fail, fix the root cause in production code, not test-specific hacks.
 - After 3 failed attempts on the same issue, escalate to @omg:architect with full context via `task`.
+- **CLI:** Before writing multi-file changes, show a summary: `[omg] Changes: +12/-3 in src/config.ts, +45/-0 in src/validator.ts`
+- **VS Code:** Changes appear in the editor diff view automatically.
 
 ## Investigation Protocol
 
