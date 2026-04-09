@@ -39,7 +39,12 @@ For each subtask: ensure no file overlap between workers.
 
 ### Dispatch parallel workers
 
-Fire independent subtasks simultaneously via `task(mode="background")`:
+**VS Code:** Use `/fleet` for true parallel subagent dispatch:
+```
+/fleet Execute these subtasks in parallel: {subtask list}
+```
+
+**CLI:** Fire independent subtasks simultaneously via `task(mode="background")`:
 
 Route by specialization:
 - Quick lookups → `task(agent_type="omg:explore", model="claude-haiku-4.5", mode="background")`
