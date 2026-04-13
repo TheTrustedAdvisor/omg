@@ -15,8 +15,8 @@ tags:
 ## Workflow
 
 1. Route the question to the specified AI via `bash`:
-   - `codex -p "question"` — OpenAI Codex CLI
-   - `gemini -p "question"` — Google Gemini CLI
+   - `codex exec "question" --ephemeral -o /dev/stdout` — OpenAI Codex CLI (non-interactive)
+   - `gemini -p "question"` — Google Gemini CLI (non-interactive)
 2. Capture the response
 3. Present the answer (or synthesize if multiple models queried)
 

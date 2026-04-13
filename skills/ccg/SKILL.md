@@ -1,6 +1,6 @@
 ---
 name: ccg
-description: "Claude-Codex-Gemini tri-model orchestration — get three perspectives, then synthesize"
+description: "Claude-Codex-Gemini tri-model orchestration — decompose, query, synthesize"
 tags:
   - multi-ai
   - research
@@ -8,23 +8,27 @@ tags:
 
 ## When to Use
 
-- Complex decision needing multiple AI perspectives
-- User says "ccg" or wants tri-model analysis
+- Complex decisions needing multiple AI perspectives
 - Architecture decisions, design trade-offs, or contentious technical choices
+- Cross-validation where different models may disagree
+- User says "ccg", "tri-model", or wants multi-perspective analysis
 
 ## Workflow
 
-1. Send the same question to all three AIs via `bash`:
-   - Claude (current session) — analyze directly
-   - Codex: `codex -p "question"` (if installed)
-   - Gemini: `gemini -p "question"` (if installed)
-2. Collect all three responses
-3. Synthesize: identify agreement, disagreements, and unique insights
-4. Present unified recommendation with attribution
+Delegates to @omg:ccg agent, which executes the 3-phase protocol:
+
+1. **Decompose:** Split the request into specialized prompts (Codex: architecture/security, Gemini: UX/alternatives)
+2. **Query:** Run advisors in parallel via CLI:
+   - `codex exec "<prompt>" --ephemeral -o /dev/stdout`
+   - `gemini -p "<prompt>"`
+3. **Synthesize:** Unify all perspectives (Codex + Gemini + Claude's own) with attribution and action checklist
 
 ## Prerequisites
 
-Requires Codex CLI and Gemini CLI for full tri-model. Falls back to available models if one is missing.
+Full tri-model requires Codex CLI and Gemini CLI. Falls back to available models if one is missing.
+
+- Codex: `npm install -g @openai/codex`
+- Gemini: `npm install -g @google/gemini-cli`
 
 ## Trigger Keywords
 
@@ -32,10 +36,12 @@ ccg, tri-model, three perspectives
 
 ## Example
 
-```bash
-copilot -i "ccg: best approach for caching"
+```
+@omg:ccg Should I use a message queue or direct HTTP between microservices?
 ```
 
 ## Quality Contract
 
-- Claude + Codex + Gemini perspectives synthesized
+- Decomposed prompts tailored to each model's strengths
+- All perspectives synthesized with attribution
+- Action checklist in output
