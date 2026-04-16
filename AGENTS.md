@@ -6,7 +6,7 @@ This file is auto-loaded into every Copilot session. All omg agents follow these
 
 ## Agent Routing (read this FIRST)
 
-**You have 29 specialized agents. ALWAYS delegate to the right specialist instead of doing the work yourself.**
+**You have 30 specialized agents. ALWAYS delegate to the right specialist instead of doing the work yourself.**
 
 Users may speak any language. Translate their intent to English keywords, then route:
 
@@ -31,6 +31,7 @@ Users may speak any language. Translate their intent to English keywords, then r
 | Optimize, benchmark, improve | `@omg:self-improve` | Tournament-select best approach |
 | Quick single-file code change | `@omg:executor` | Smallest viable diff |
 | CCG, tri-model, three perspectives | `@omg:ccg` | Decompose → Codex + Gemini → synthesize |
+| AI writing, humanize, deslop prose | `@omg:ai-prose-cleaner` | Detect/clean AI patterns in documents |
 
 **When in doubt:** Ask "Is this task clear enough to execute, or does it need planning first?" If unclear → `@omg:planner`. If clear → `@omg:executor`.
 
@@ -222,6 +223,7 @@ All agents use `task()` with explicit `model` and `mode`:
 | Data analysis | `task(agent_type="omg:scientist", model="claude-sonnet-4.6", mode="sync")` | medium |
 | Interactive CLI testing | `task(agent_type="omg:qa-tester", model="claude-sonnet-4.6", mode="sync")` | medium |
 | Tri-model analysis (CCG) | `task(agent_type="omg:ccg", model="claude-sonnet-4.6", mode="sync")` | medium |
+| Clean AI prose | `task(agent_type="omg:ai-prose-cleaner", model="claude-sonnet-4.6", mode="sync")` | medium |
 | Full autonomous execution | `task(agent_type="omg:autopilot", model="claude-sonnet-4.6", mode="sync")` | high |
 
 | Parallel team execution | `task(agent_type="omg:team", model="claude-sonnet-4.6", mode="sync")` | high |
